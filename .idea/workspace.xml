@@ -6,7 +6,27 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71397940-aeff-4fb2-bdd9-e028cb02583a" name="Default Changelist" comment="" />
+    <list default="true" id="71397940-aeff-4fb2-bdd9-e028cb02583a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/AppService_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/AppService_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a248d2ce-236f-45d0-9d5f-846d751019b9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a248d2ce-236f-45d0-9d5f-846d751019b9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppService.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AppService.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AppService/entity/MessageboxEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AppService/entity/MessageboxEntity.hbm.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AppService/entity/UserEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AppService/entity/UserEntity.hbm.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AppService/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AppService/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AppService/spring-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AppService/spring-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AppService/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AppService/struts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/MessageboxEntity.hbm.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/MessageboxEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/UserEntity.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/boollean/entity/UserEntity.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/boollean/entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/spring-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/spring-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/struts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,16 +61,67 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="appservice: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="AppService@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="appservice: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/index.jsp">
+        <entry file="file://$PROJECT_DIR$/src/com/boollean/dao/ManageUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+            <state relative-caret-position="372">
+              <caret line="209" column="28" lean-forward="true" selection-start-line="209" selection-start-column="28" selection-end-line="209" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#init#0;class#ManageUser#0" />
+                <element signature="method#listAllUser#1;class#ManageUser#0" />
+                <element signature="method#listBest100Users4#1;class#ManageUser#0" />
+                <element signature="method#listBest100Users4#2;class#ManageUser#0" />
+                <element signature="method#isUserNameAvailable#0;class#ManageUser#0" />
+                <element signature="method#addUser#0;class#ManageUser#0" />
+                <element signature="method#addUser#1;class#ManageUser#0" />
+                <element signature="method#addUser#2;class#ManageUser#0" />
+                <element signature="method#addUser#3;class#ManageUser#0" />
+                <element signature="method#addUser#4;class#ManageUser#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/boollean/entity/UserEntity.hbm.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="25" column="68" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/boollean/entity/UserEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="866">
+              <caret line="90" column="8" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="8" />
+              <folding>
+                <element signature="e#1306#1307#0" expanded="true" />
+                <element signature="e#1339#1340#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/hibernate-core-5.4.1.Final.jar!/org/hibernate/internal/SessionFactoryImpl.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="426" selection-start-line="426" selection-end-line="426" />
             </state>
           </provider>
         </entry>
@@ -62,9 +133,14 @@
       <list>
         <option value="spring-beans.schema" />
         <option value="struts_2_5" />
+        <option value="Arquillian JUnit Test Class" />
         <option value="Class" />
+        <option value="Tag Library Descriptor" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -72,10 +148,18 @@
         <option value="$PROJECT_DIR$/src/entity/MessageboxEntity.hbm.xml" />
         <option value="$PROJECT_DIR$/src/entity/MessageboxEntity.java" />
         <option value="$PROJECT_DIR$/src/entity/UserEntity.java" />
-        <option value="$PROJECT_DIR$/src/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/spring-config.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/src/com/boollean/dao/UserDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/com/boollean/entity/MessageboxEntity.java" />
+        <option value="$PROJECT_DIR$/src/com/boollean/entity/MessageboxEntity.hbm.xml" />
+        <option value="$PROJECT_DIR$/src/com/boollean/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/struts.xml" />
+        <option value="$PROJECT_DIR$/src/spring-config.xml" />
+        <option value="$PROJECT_DIR$/src/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/web/log4j2.xml" />
+        <option value="$PROJECT_DIR$/src/com/boollean/entity/UserEntity.hbm.xml" />
+        <option value="$PROJECT_DIR$/src/com/boollean/dao/ManageUser.java" />
       </list>
     </option>
   </component>
@@ -86,16 +170,27 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="735" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -106,24 +201,32 @@
             <path>
               <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
               <item name="AppService" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AppService" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
               <item name="AppService" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="boollean" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AppService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="boollean" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AppService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="boollean" type="462c0819:PsiDirectoryNode" />
               <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppService" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppService" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
@@ -133,8 +236,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -146,16 +247,28 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552979833506" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553072700886" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="database.console.LAST_STATE" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/log4j.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/com/boollean/entity/MessageboxEntity.hbm.xml" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.boollean.dao" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="com.boollean.entity" />
       <recent name="entity" />
     </key>
   </component>
@@ -171,7 +284,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ManageUser">
+    <configuration name="ManageUser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.boollean.dao.ManageUser" />
+      <module name="AppService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.boollean.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AppService" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.38" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/AppService" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -245,6 +371,11 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ManageUser" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -257,46 +388,56 @@
       <option name="presentableId" value="Default" />
       <updated>1552976044831</updated>
       <workItem from="1552976051440" duration="3672000" />
-      <workItem from="1552980246435" duration="313000" />
+      <workItem from="1552980246435" duration="7423000" />
+      <workItem from="1553057450107" duration="14529000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3985000" />
+    <option name="totallyTimeSpent" value="25624000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49880096" visible="true" weight="0.25340393" />
-      <window_info id="Structure" order="1" sideWeight="0.50080514" side_tool="true" weight="0.24962178" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49509802" visible="true" weight="0.15204236" />
+      <window_info id="Structure" order="1" sideWeight="0.50341684" side_tool="true" weight="0.25340393" />
       <window_info id="Designer" order="2" />
-      <window_info id="Persistence" order="3" sideWeight="0.50119907" side_tool="true" weight="0.24962178" />
+      <window_info id="Persistence" order="3" sideWeight="0.50490195" side_tool="true" weight="0.15204236" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="UI Designer" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.65700483" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32903227" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.3419355" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32850242" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32903227" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32741934" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32903227" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32850242" />
-      <window_info anchor="bottom" id="Messages" order="11" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32850242" />
-      <window_info anchor="bottom" id="Spring" order="13" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.29193547" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32903227" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32741934" />
+      <window_info anchor="bottom" id="Spring" order="13" weight="0.32903227" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="15" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.32903227" />
+      <window_info anchor="bottom" id="Database Console" order="16" weight="0.32903227" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.32980332" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" weight="0.32980332" />
@@ -306,6 +447,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e3ed934d-fc67-4dec-90ab-62b7704d94b0/console.sql">
@@ -320,55 +465,175 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a248d2ce-236f-45d0-9d5f-846d751019b9/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entity/UserEntity.hbm.xml">
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boollean/dao/UserDaoTest.java" />
+    <entry file="das://a248d2ce-236f-45d0-9d5f-846d751019b9/schema/appservice/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boollean/entity/MessageboxEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring-orm-4.3.18.RELEASE.jar!/org/springframework/orm/hibernate4/support/HibernateDaoSupport.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="49" column="49" lean-forward="true" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/hibernate-core-5.4.1.Final.jar!/org/hibernate/SessionFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/log4j.tld" />
+    <entry file="file://$PROJECT_DIR$/src/struts.xml">
+      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="51" lean-forward="true" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/extensions/com.intellij.database/schema/Generate POJOs.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-660">
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/hibernate-core-5.4.1.Final.jar!/org/hibernate/boot/registry/BootstrapServiceRegistryBuilder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-127">
+          <caret line="116" column="36" selection-start-line="116" selection-start-column="36" selection-end-line="116" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/Hibernate/lib/hibernate.jar!/resources/schemas/hibernate-configuration-3.0.dtd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/hibernate-core-5.4.1.Final.jar!/org/hibernate/cfg/Configuration.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="89" column="11" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
+          <folding>
+            <element signature="e#4233#4234#0" expanded="true" />
+            <element signature="e#4302#4303#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boollean/entity/MessageboxEntity.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entity/MessageboxEntity.hbm.xml">
+    <entry file="file://$PROJECT_DIR$/AppService.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-        </state>
+        <state relative-caret-position="-880" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entity/MessageboxEntity.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entity/UserEntity.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/struts.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/spring-config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="28" column="19" lean-forward="true" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+        <state relative-caret-position="110">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="25" lean-forward="true" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        <state relative-caret-position="132">
+          <caret line="6" column="75" selection-start-line="6" selection-start-column="75" selection-end-line="6" selection-end-column="75" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+    <entry file="file://$PROJECT_DIR$/web/log4j2.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        <state relative-caret-position="1364">
+          <caret line="62" column="16" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider" />
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/hibernate-core-5.4.1.Final.jar!/org/hibernate/internal/SessionFactoryImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="426" selection-start-line="426" selection-end-line="426" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boollean/entity/UserEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="866">
+          <caret line="90" column="8" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="8" />
+          <folding>
+            <element signature="e#1306#1307#0" expanded="true" />
+            <element signature="e#1339#1340#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boollean/entity/UserEntity.hbm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" column="68" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/log4j.jar!/org/apache/logging/log4j/simple/SimpleLogger.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boollean/dao/ManageUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="209" column="28" lean-forward="true" selection-start-line="209" selection-start-column="28" selection-end-line="209" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#init#0;class#ManageUser#0" />
+            <element signature="method#listAllUser#1;class#ManageUser#0" />
+            <element signature="method#listBest100Users4#1;class#ManageUser#0" />
+            <element signature="method#listBest100Users4#2;class#ManageUser#0" />
+            <element signature="method#isUserNameAvailable#0;class#ManageUser#0" />
+            <element signature="method#addUser#0;class#ManageUser#0" />
+            <element signature="method#addUser#1;class#ManageUser#0" />
+            <element signature="method#addUser#2;class#ManageUser#0" />
+            <element signature="method#addUser#3;class#ManageUser#0" />
+            <element signature="method#addUser#4;class#ManageUser#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -403,6 +668,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
+          <last-edited>log4j</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

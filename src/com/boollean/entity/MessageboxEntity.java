@@ -1,9 +1,6 @@
-package entity;
+package com.boollean.entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
 
@@ -13,6 +10,7 @@ public class MessageboxEntity {
     private String name;
     private Timestamp time;
     private String msg;
+    private int msgid;
 
     @Basic
     @Column(name = "name", nullable = false, length = 12)
@@ -44,18 +42,29 @@ public class MessageboxEntity {
         this.msg = msg;
     }
 
+    @Id
+    @Column(name = "msgid", nullable = false)
+    public int getMsgid() {
+        return msgid;
+    }
+
+    public void setMsgid(int msgid) {
+        this.msgid = msgid;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MessageboxEntity that = (MessageboxEntity) o;
-        return Objects.equals(name, that.name) &&
+        return msgid == that.msgid &&
+                Objects.equals(name, that.name) &&
                 Objects.equals(time, that.time) &&
                 Objects.equals(msg, that.msg);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, time, msg);
+        return Objects.hash(name, time, msg, msgid);
     }
 }

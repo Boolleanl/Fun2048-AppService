@@ -1,4 +1,4 @@
-package entity;
+package com.boollean.entity;
 
 import javax.persistence.*;
 import java.util.Objects;
