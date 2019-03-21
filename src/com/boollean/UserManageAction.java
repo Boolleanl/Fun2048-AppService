@@ -1,4 +1,4 @@
-package com.boollean.dao;
+package com.boollean;
 
 import com.boollean.entity.UserEntity;
 import org.hibernate.HibernateException;
@@ -7,12 +7,11 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
-import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 import java.util.Iterator;
 import java.util.List;
 
-public class ManageUser {
+public class UserManageAction {
 
     private static Configuration configuration;
     private static SessionFactory factory;
@@ -29,20 +28,16 @@ public class ManageUser {
 
     public static List<UserEntity> listAllUser(){
         init();
-        Transaction transaction = null;
         String queryString = "FROM UserEntity";
         List<UserEntity> list = null;
         try{
-            transaction = session.beginTransaction();
             Query query = session.createQuery(queryString);
             list = query.list();
             for (Iterator iterator = list.iterator(); iterator.hasNext();) {
                 UserEntity userEntity = (UserEntity) iterator.next();
                 System.out.println("Name: " + userEntity.getName());
             }
-            transaction.commit();
         }catch (HibernateException e) {
-            if (transaction!=null) transaction.rollback();
             e.printStackTrace();
         }finally {
             session.close();
@@ -200,19 +195,36 @@ public class ManageUser {
         return userEntity;
     }
 
+
+    public static void updateUser(String oldName,String newName,String avatar,int gender,String password){
+        if (isUserNameAvailable(newName)){
+            init();
+
+            Transaction transaction = null;
+            String queryString = "UPDATE UserEntity U set U.name = :newName, U.avatar = :avatar, U.gender = :gender, U.password = :password "
+                    +"WHERE U.name = :oldName";
+            try{Query query = session.createQuery(queryString);
+                query.setParameter("newName",newName);
+                query.setParameter("avatar",avatar);
+                query.setParameter("gender",gender);
+                query.setParameter("password",password);
+                query.setParameter("oldName",oldName);
+                int result = query.executeUpdate();
+                transaction.commit();
+                System.out.println("添加成功！ " + result);
+            }catch (HibernateException e) {
+                if (transaction!=null) transaction.rollback();
+                e.printStackTrace();
+            }finally {
+                session.close();
+                factory.close();
+            }
+        }else {
+            System.out.println(" 失败");
+        }
+    }
+
     public static void main(String args[]){
-        listAllUser();
-        System.out.println();
-        System.out.println();
-        listBest100Users4();
-        System.out.println();
-        System.out.println();
-        listBest100Users5();
-        System.out.println();
-        System.out.println();
-        listBest100Users6();
-        System.out.println();
-        System.out.println();
-        addUser("小花","741",2);
+        updateUser("xiaoqiang","xiaoqiang123","qweasdzxc",0,"gai");
     }
 }

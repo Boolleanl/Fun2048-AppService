@@ -14,6 +14,25 @@ public class UserEntity {
     private Integer bestscore5;
     private Integer bestscore6;
 
+    public UserEntity(String name, String password, int gender, String avatar) {
+        this.name = name;
+        this.password = password;
+        this.gender = gender;
+        this.avatar = avatar;
+    }
+
+    public UserEntity(String name, String password, int gender, String avatar, Integer bestscore4, Integer bestscore5, Integer bestscore6) {
+        this.name = name;
+        this.password = password;
+        this.gender = gender;
+        this.avatar = avatar;
+        this.bestscore4 = bestscore4;
+        this.bestscore5 = bestscore5;
+        this.bestscore6 = bestscore6;
+    }
+
+    public UserEntity() {}
+
     @Id
     @Column(name = "name", nullable = false, length = 12)
     public String getName() {

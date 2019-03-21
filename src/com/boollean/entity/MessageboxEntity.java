@@ -7,19 +7,19 @@ import java.util.Objects;
 @Entity
 @Table(name = "messagebox", schema = "appservice", catalog = "")
 public class MessageboxEntity {
-    private String name;
+    private String userName;
     private Timestamp time;
     private String msg;
     private int msgid;
 
     @Basic
     @Column(name = "name", nullable = false, length = 12)
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     @Basic
@@ -58,13 +58,13 @@ public class MessageboxEntity {
         if (o == null || getClass() != o.getClass()) return false;
         MessageboxEntity that = (MessageboxEntity) o;
         return msgid == that.msgid &&
-                Objects.equals(name, that.name) &&
+                Objects.equals(userName, that.userName) &&
                 Objects.equals(time, that.time) &&
                 Objects.equals(msg, that.msg);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, time, msg, msgid);
+        return Objects.hash(userName, time, msg, msgid);
     }
 }
