@@ -12,10 +12,7 @@ import org.junit.Test;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceUnit;
-import java.util.ArrayList;
+import javax.persistence.*;
 import java.util.Iterator;
 import java.util.List;
 
@@ -42,24 +39,23 @@ public class UserDaoImpl implements UserDao {
         init();
         String hql = "FROM UserEntity";
         List<UserEntity> list = null;
-        try{
+        try {
             Query query = session.createQuery(hql);
             list = query.list();
-            for (Iterator iterator = list.iterator(); iterator.hasNext();) {
+            for (Iterator iterator = list.iterator(); iterator.hasNext(); ) {
                 UserEntity userEntity = (UserEntity) iterator.next();
                 System.out.println("Name: " + userEntity.getName());
             }
-        }catch (HibernateException e) {
+        } catch (HibernateException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             close();
         }
         return list;
     }
 
     @Test
-    public void testGetAllUser()
-    {
+    public void testGetAllUser() {
         getAllUser();
     }
 
@@ -68,25 +64,25 @@ public class UserDaoImpl implements UserDao {
         init();
         String hql = "FROM UserEntity U WHERE U.bestscore4 > 0 ORDER BY U.bestscore4 DESC ,U.name asc";
         List<UserEntity> list = null;
-        try{
+        try {
             Query query = session.createQuery(hql);
             query.setMaxResults(100);
             list = query.list();
-            for (Iterator iterator = list.iterator(); iterator.hasNext();) {
+            for (Iterator iterator = list.iterator(); iterator.hasNext(); ) {
                 UserEntity userEntity = (UserEntity) iterator.next();
                 System.out.print("Name: " + userEntity.getName());
-                System.out.println("  4*4分数： "+userEntity.getBestscore4());
+                System.out.println("  4*4分数： " + userEntity.getBestscore4());
             }
-        }catch (HibernateException e) {
+        } catch (HibernateException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             close();
         }
         return list;
     }
 
     @Test
-    public void testListBest100Users4(){
+    public void testListBest100Users4() {
         listBest100Users4();
     }
 
@@ -95,25 +91,25 @@ public class UserDaoImpl implements UserDao {
         init();
         String hql = "FROM UserEntity U WHERE U.bestscore5 > 0 ORDER BY U.bestscore5 DESC ,U.name asc";
         List<UserEntity> list = null;
-        try{
+        try {
             Query query = session.createQuery(hql);
             query.setMaxResults(100);
             list = query.list();
-            for (Iterator iterator = list.iterator(); iterator.hasNext();) {
+            for (Iterator iterator = list.iterator(); iterator.hasNext(); ) {
                 UserEntity userEntity = (UserEntity) iterator.next();
                 System.out.print("Name: " + userEntity.getName());
-                System.out.println("  5*5分数： "+userEntity.getBestscore5());
+                System.out.println("  5*5分数： " + userEntity.getBestscore5());
             }
-        }catch (HibernateException e) {
+        } catch (HibernateException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             close();
         }
         return list;
     }
 
     @Test
-    public void testListBest100Users5(){
+    public void testListBest100Users5() {
         listBest100Users5();
     }
 
@@ -122,45 +118,46 @@ public class UserDaoImpl implements UserDao {
         init();
         String hql = "FROM UserEntity U WHERE U.bestscore6 > 0 ORDER BY U.bestscore6 DESC ,U.name asc";
         List<UserEntity> list = null;
-        try{
+        try {
             Query query = session.createQuery(hql);
             query.setMaxResults(100);
             list = query.list();
-            for (Iterator iterator = list.iterator(); iterator.hasNext();) {
+            for (Iterator iterator = list.iterator(); iterator.hasNext(); ) {
                 UserEntity userEntity = (UserEntity) iterator.next();
                 System.out.print("Name: " + userEntity.getName());
-                System.out.println("  6*6分数： "+userEntity.getBestscore6());
+                System.out.println("  6*6分数： " + userEntity.getBestscore6());
             }
-        }catch (HibernateException e) {
+        } catch (HibernateException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             close();
         }
         return list;
     }
 
     @Test
-    public void testListBest100Users6(){
+    public void testListBest100Users6() {
         listBest100Users6();
     }
 
     @Override
     public boolean isUserNameAvailable(String name) {
         name = name.trim();
-        if(name.isEmpty()){
+        if (name.isEmpty()) {
             System.out.println("名字为空，不可用");
-            return false; }
+            return false;
+        }
         init();
         String queryString = "FROM UserEntity U WHERE U.name = ?1";
-        try{
-            Query query = session.createQuery(queryString).setParameter(1,name);
-            if(query.list().isEmpty()){
+        try {
+            Query query = session.createQuery(queryString).setParameter(1, name);
+            if (query.list().isEmpty()) {
                 System.out.println("可用");
                 return true;
             }
-        }catch (HibernateException e) {
+        } catch (HibernateException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             session.close();
             factory.close();
         }
@@ -169,7 +166,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Test
-    public void testName(){
+    public void testName() {
         isUserNameAvailable("小日");
         isUserNameAvailable("  ");
         isUserNameAvailable("小佳");
@@ -179,31 +176,31 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public boolean addUser(UserEntity userEntity) {
-        if (isUserNameAvailable(userEntity.getName())){
+        if (isUserNameAvailable(userEntity.getName())) {
             init();
             Transaction transaction = null;
-            try{
+            try {
                 transaction = session.beginTransaction();
                 session.save(userEntity);
                 transaction.commit();
                 System.out.println("添加成功！ " + userEntity.getName());
                 return true;
-            }catch (HibernateException e) {
-                if (transaction!=null) transaction.rollback();
+            } catch (HibernateException e) {
+                if (transaction != null) transaction.rollback();
                 e.printStackTrace();
-            }finally {
+            } finally {
                 close();
             }
-        }else {
-            System.out.println(userEntity.getName()+" 添加失败");
+        } else {
+            System.out.println(userEntity.getName() + " 添加失败");
         }
         return false;
     }
 
     @Test
-    public void testAddUser(){
-        UserEntity u1 = new UserEntity("小河","q7a41",2,"d45sd1");
-        UserEntity u2 = new UserEntity("小日","q7a41",2,"d45sd1");
+    public void testAddUser() {
+        UserEntity u1 = new UserEntity("小河", "q7a41", 2, "d45sd1");
+        UserEntity u2 = new UserEntity("小日", "q7a41", 2, "d45sd1");
         addUser(u1);
         addUser(u2);
     }
@@ -211,32 +208,32 @@ public class UserDaoImpl implements UserDao {
     @Override
     public UserEntity getUserByName(String name) {
         name = name.trim();
-        if(name.isEmpty()){
+        if (name.isEmpty()) {
             System.out.println("名字为空，不可查询");
             return null;
         }
         init();
         String hql = "FROM UserEntity U WHERE U.name = ?1";
         List<UserEntity> list = null;
-        try{
-            Query query = session.createQuery(hql).setParameter(1,name);
+        try {
+            Query query = session.createQuery(hql).setParameter(1, name);
             list = query.list();
-            if(list.isEmpty()){
+            if (list.isEmpty()) {
                 System.out.println("查无此人");
                 return null;
             }
-        }catch (HibernateException e) {
+        } catch (HibernateException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             close();
         }
         UserEntity userEntity = list.get(0);
-        System.out.println(userEntity.getName()+"  "+userEntity.getPassword()+"  "+userEntity.getGender() +"  " +userEntity.getAvatar());
-        return list.get(0);
+        System.out.println(userEntity.getName() + "  " + userEntity.getPassword() + "  " + userEntity.getGender() + "  " + userEntity.getAvatar());
+        return userEntity;
     }
 
     @Test
-    public void teatGetByName(){
+    public void teatGetByName() {
         getUserByName("");
         getUserByName("小日");
         getUserByName("  ");
@@ -244,52 +241,80 @@ public class UserDaoImpl implements UserDao {
 
     }
 
-    @PersistenceUnit
-    EntityManagerFactory entityManagerFactory =
-
     @Override
-    public boolean updateUserByName(String oldName,UserEntity userEntity) {
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+    public boolean updateUserByName(String oldName, UserEntity userEntity) {
 
-        if (isUserNameAvailable(userEntity.getName())){
+        if (isUserNameAvailable(userEntity.getName())) {
             init();
             Transaction transaction = null;
             String hql = "UPDATE UserEntity U set U.name = :newName, U.avatar = :avatar, U.gender = :gender, U.password = :password "
-                    +"WHERE U.name = :oldName";
-            try{Query query = (Query) entityManager.createQuery(hql);
-                query.setParameter("newName",userEntity.getName());
-                query.setParameter("avatar",userEntity.getAvatar());
-                query.setParameter("gender",userEntity.getGender());
-                query.setParameter("password",userEntity.getPassword());
-                query.setParameter("oldName",oldName);
+                            + "WHERE U.name = :oldName";
 
-                entityManager.joinTransaction();
+            String hql2 = "UPDATE UserEntity U set U = :user "
+                    + "WHERE U.name = :oldName";
+            try {
+                transaction =  session.beginTransaction();
+                Query query = session.createQuery(hql2);
+                query.setParameter("user",userEntity);
+//                query.setParameter("newName", userEntity.getName());
+//                query.setParameter("avatar", userEntity.getAvatar());
+//                query.setParameter("gender", userEntity.getGender());
+//                query.setParameter("password", userEntity.getPassword());
+                query.setParameter("oldName", oldName);
+
                 int result = query.executeUpdate();
                 transaction.commit();
                 System.out.println("添加成功！ " + result);
                 return true;
-            }catch (HibernateException e) {
+            } catch (HibernateException e) {
                 if (transaction!=null) transaction.rollback();
                 e.printStackTrace();
-            }finally {
+            } finally {
                 session.close();
                 factory.close();
             }
-        }else {
+        } else {
             System.out.println(" 失败");
         }
         return false;
     }
 
     @Test
-    public void testUpdate(){
-        UserEntity u = new UserEntity("小Q","q7a41",2,"d45sd1");
-        updateUserByName("小日",u);
+    public void testUpdate() {
+        UserEntity u = new UserEntity("小A", "q7a41", 2, "d45sd1");
+        updateUserByName("小Q", u);
+
     }
 
+
+    @Transactional
     @Override
     public boolean deleteUserByName(String name) {
+        if (!name.trim().isEmpty()) {
+            String hql = "DELETE FROM UserEntity U WHERE U.name = ?1";
+            Transaction transaction = null;
+            try {
+                init();
+                transaction = session.beginTransaction();
+                Query query = session.createQuery(hql);
+                query.setParameter(1, name);
+                query.executeUpdate();
+                transaction.commit();
+                System.out.println("成功");
+                return true;
+            } catch (HibernateException e) {
+                if (transaction!=null) transaction.rollback();
+                e.printStackTrace();
+            } finally {
+                close();
+            }
+        }
         return false;
+    }
+
+    @Test
+    public void testDelete() {
+        deleteUserByName("小河");
     }
 
     @Override

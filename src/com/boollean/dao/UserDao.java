@@ -1,7 +1,9 @@
 package com.boollean.dao;
 
 import com.boollean.entity.UserEntity;
+import org.hibernate.annotations.NamedQuery;
 
+import javax.persistence.QueryHint;
 import java.util.List;
 
 public interface UserDao {
@@ -14,6 +16,7 @@ public interface UserDao {
     public boolean addUser(UserEntity userEntity);
     public UserEntity getUserByName(String oldName);
     public boolean updateUserByName(String name,UserEntity userEntity);
+
     public boolean deleteUserByName(String name);
     public void close();
 }
