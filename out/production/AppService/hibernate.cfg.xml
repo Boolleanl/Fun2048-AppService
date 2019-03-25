@@ -13,8 +13,8 @@
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.format_sql">true</property>
 
-      <mapping class="com.boollean.entity.MessageboxEntity"/>
-      <mapping resource="com/boollean/entity/MessageboxEntity.hbm.xml"/>
+      <mapping class="com.boollean.entity.MessageEntity"/>
+      <mapping resource="com/boollean/entity/MessageEntity.hbm.xml"/>
       <mapping class="com.boollean.entity.UserEntity"/>
       <mapping resource="com/boollean/entity/UserEntity.hbm.xml"/>
 

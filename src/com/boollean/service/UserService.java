@@ -1,15 +1,13 @@
-package com.boollean.dao;
+package com.boollean.service;
 
 import com.boollean.entity.UserEntity;
 
 import java.util.List;
 
-public interface UserDao {
-    void init();
-
+public interface UserService {
     List<UserEntity> getAllUsers();
 
-    UserEntity getUserByName(String oldName);
+    UserEntity getUserByName(String name);
 
     int getBestScore4ByName(String name);
 
@@ -38,6 +36,4 @@ public interface UserDao {
     boolean updateBestScore6(String name, int score);
 
     boolean deleteUserByName(String name);
-
-    void close();
 }

@@ -1113,7 +1113,7 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="280" parent="2" name="messagebox"/>
+    <table id="280" parent="2" name="message"/>
     <table id="281" parent="2" name="user"/>
     <column id="282" parent="280" name="name">
       <Position>1</Position>

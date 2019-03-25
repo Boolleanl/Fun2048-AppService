@@ -5,12 +5,21 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name = "messagebox", schema = "appservice", catalog = "")
-public class MessageboxEntity {
+@Table(name = "message", schema = "appservice", catalog = "")
+public class MessageEntity {
     private String userName;
     private Timestamp time;
     private String msg;
     private int msgid;
+
+    public MessageEntity(String userName, Timestamp time, String msg) {
+        this.userName = userName;
+        this.time = time;
+        this.msg = msg;
+    }
+
+    public MessageEntity() {
+    }
 
     @Basic
     @Column(name = "name", nullable = false, length = 12)
@@ -56,7 +65,7 @@ public class MessageboxEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        MessageboxEntity that = (MessageboxEntity) o;
+        MessageEntity that = (MessageEntity) o;
         return msgid == that.msgid &&
                 Objects.equals(userName, that.userName) &&
                 Objects.equals(time, that.time) &&

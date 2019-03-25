@@ -59,5 +59,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" exported="" name="log4j" level="application" />
+    <orderEntry type="library" exported="" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="library" name="json" level="project" />
   </component>
 </module>

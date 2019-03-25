@@ -31,7 +31,8 @@ public class UserEntity {
         this.bestscore6 = bestscore6;
     }
 
-    public UserEntity() {}
+    public UserEntity() {
+    }
 
     @Id
     @Column(name = "name", nullable = false, length = 12)

@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.boollean.entity.MessageboxEntity" table="messagebox" schema="appservice">
+    <class name="com.boollean.entity.MessageEntity" table="message" schema="appservice">
         <id name="msgid">
             <column name="msgid" sql-type="int(14)"/>
             <generator class="identity"/>
