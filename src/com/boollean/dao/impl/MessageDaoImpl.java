@@ -9,6 +9,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 import org.junit.Test;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,7 +22,7 @@ import java.util.List;
 public class MessageDaoImpl implements MessageDao {
 
     private static Configuration configuration;
-    private static SessionFactory factory;
+    private static SessionFactory sessionFactory;
     private static Session session;
 
     @Override
@@ -29,9 +30,9 @@ public class MessageDaoImpl implements MessageDao {
         //1.加载配置文件,设置配置文件,默认加载src目录下的hibernate.cfg.xml的配置文件
         configuration = new Configuration().configure();
         //2.建立SessionFactory对象
-        factory = configuration.buildSessionFactory();
+        sessionFactory = configuration.buildSessionFactory();
         //3.打开session对象
-        session = factory.openSession();
+        session = sessionFactory.openSession();
     }
 
     /**
@@ -130,6 +131,7 @@ public class MessageDaoImpl implements MessageDao {
     @Override
     public void close() {
         session.close();
-        factory.close();
+        sessionFactory.close();
     }
+
 }

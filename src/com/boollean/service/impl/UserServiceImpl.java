@@ -100,34 +100,34 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean updateUserByName(String oldName, String newName, int gender, String password, String avatar) {
+    public boolean updateUserDataByName(String oldName, String newName, int gender, String password, String avatar) {
         if (isUserNameAvailable(newName)) {
-            return this.userDao.updateUserByName(oldName, newName, gender, password, avatar);
+            return this.userDao.updateUserDataByName(oldName, newName, gender, password, avatar);
         } else return false;
     }
 
     @Override
-    public boolean updateBestScore4(String name, int score) {
+    public boolean updateBestScore4ByName(String name, int score) {
         if (name.trim().isEmpty() || score < 0) {
             return false;
         }
-        return this.userDao.updateBestScore4(name, score);
+        return this.userDao.updateBestScore4ByName(name, score);
     }
 
     @Override
-    public boolean updateBestScore5(String name, int score) {
+    public boolean updateBestScore5ByName(String name, int score) {
         if (name.trim().isEmpty() || score < 0) {
             return false;
         }
-        return this.userDao.updateBestScore5(name, score);
+        return this.userDao.updateBestScore5ByName(name, score);
     }
 
     @Override
-    public boolean updateBestScore6(String name, int score) {
+    public boolean updateBestScore6ByName(String name, int score) {
         if (name.trim().isEmpty() || score < 0) {
             return false;
         }
-        return this.userDao.updateBestScore6(name, score);
+        return this.userDao.updateBestScore6ByName(name, score);
     }
 
     @Override

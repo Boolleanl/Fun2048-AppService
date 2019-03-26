@@ -9,28 +9,30 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Iterator;
 import java.util.List;
 
-@Repository(value = "USER")
+@Repository
 @Transactional
 public class UserDaoImpl implements UserDao {
 
     private static Configuration configuration;
-    private static SessionFactory factory;
     private static Session session;
+    @Autowired
+    private SessionFactory sessionFactory;
 
     @Override
     public void init() {
         //1.加载配置文件,设置配置文件,默认加载src目录下的hibernate.cfg.xml的配置文件
         configuration = new Configuration().configure();
         //2.建立SessionFactory对象
-        factory = configuration.buildSessionFactory();
+        sessionFactory = configuration.buildSessionFactory();
         //3.打开session对象
-        session = factory.openSession();
+        session = sessionFactory.openSession();
     }
 
     /**
@@ -379,7 +381,7 @@ public class UserDaoImpl implements UserDao {
      */
     @Transactional
     @Override
-    public boolean updateBestScore4(String name, int score) {
+    public boolean updateBestScore4ByName(String name, int score) {
         init();
         Transaction transaction = null;
         String hql = "UPDATE UserEntity U set U.bestscore4 = :score "
@@ -402,7 +404,7 @@ public class UserDaoImpl implements UserDao {
 
     @Test
     public void testUpdateBestScore4() {
-        updateBestScore4("小Y", 4444);
+        updateBestScore4ByName("小Y", 4444);
     }
 
     /**
@@ -414,7 +416,7 @@ public class UserDaoImpl implements UserDao {
      */
     @Transactional
     @Override
-    public boolean updateBestScore5(String name, int score) {
+    public boolean updateBestScore5ByName(String name, int score) {
         if (!name.trim().isEmpty()) {
             init();
             Transaction transaction = null;
@@ -434,7 +436,7 @@ public class UserDaoImpl implements UserDao {
                 e.printStackTrace();
             } finally {
                 session.close();
-                factory.close();
+                sessionFactory.close();
             }
         } else {
             System.out.println(" 失败");
@@ -444,7 +446,7 @@ public class UserDaoImpl implements UserDao {
 
     @Test
     public void testUpdateBestScore5() {
-        updateBestScore5("小Y", 55555);
+        updateBestScore5ByName("小Y", 55555);
     }
 
     /**
@@ -456,7 +458,7 @@ public class UserDaoImpl implements UserDao {
      */
     @Transactional
     @Override
-    public boolean updateBestScore6(String name, int score) {
+    public boolean updateBestScore6ByName(String name, int score) {
         if (!name.trim().isEmpty()) {
             init();
             Transaction transaction = null;
@@ -476,7 +478,7 @@ public class UserDaoImpl implements UserDao {
                 e.printStackTrace();
             } finally {
                 session.close();
-                factory.close();
+                sessionFactory.close();
             }
         } else {
             System.out.println(" 失败");
@@ -486,12 +488,12 @@ public class UserDaoImpl implements UserDao {
 
     @Test
     public void testUpdateBestScore6() {
-        updateBestScore6("小Y", 666666);
+        updateBestScore6ByName("小Y", 666666);
     }
 
     @Transactional
     @Override
-    public boolean updateUserByName(String oldName, String newName, int gender, String password, String avatar) {
+    public boolean updateUserDataByName(String oldName, String newName, int gender, String password, String avatar) {
         init();
         Transaction transaction = null;
         String hql = "UPDATE UserEntity U set U.name = :newName, U.avatar = :avatar, U.gender = :gender, U.password = :password "
@@ -519,7 +521,7 @@ public class UserDaoImpl implements UserDao {
 
     @Test
     public void testUpdateByName() {
-        updateUserByName("小红", "晓红", 0, "741", "357");
+        updateUserDataByName("小红", "晓红", 0, "741", "357");
     }
 
 
@@ -559,6 +561,6 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void close() {
         session.close();
-        factory.close();
+        sessionFactory.close();
     }
 }

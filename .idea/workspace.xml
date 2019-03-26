@@ -7,26 +7,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71397940-aeff-4fb2-bdd9-e028cb02583a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a248d2ce-236f-45d0-9d5f-846d751019b9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a248d2ce-236f-45d0-9d5f-846d751019b9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/AppService_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/AppService_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0502d5eb-aa13-45c0-99cf-2ad6edab49b4.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppService.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AppService.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AppService/com/boollean/UserManageAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AppService/com/boollean/dao/MessageDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AppService/com/boollean/dao/MessageDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AppService/com/boollean/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AppService/com/boollean/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AppService/com/boollean/entity/MessageboxEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AppService/com/boollean/entity/MessageboxEntity.hbm.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AppService/com/boollean/impl/UserDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AppService/com/boollean/dao/impl/MessageDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AppService/com/boollean/dao/impl/MessageDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AppService/com/boollean/dao/impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AppService/com/boollean/dao/impl/UserDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AppService/com/boollean/entity/MessageEntity.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AppService/com/boollean/entity/MessageEntity.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AppService/com/boollean/entity/UserEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AppService/com/boollean/entity/UserEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AppService/com/boollean/entity/UserEntity.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AppService/com/boollean/entity/UserEntity.hbm.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AppService/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AppService/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AppService/spring-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AppService/spring-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/boollean/UserManageAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/boollean/action/MessageAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/boollean/action/MessageAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/boollean/action/UserAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/boollean/action/UserAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/boollean/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/boollean/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/boollean/entity/MessageboxEntity.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/boollean/entity/MessageEntity.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/boollean/entity/MessageboxEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/boollean/entity/MessageEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/boollean/entity/UserEntity.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/boollean/entity/UserEntity.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/boollean/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/boollean/entity/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/boollean/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/boollean/dao/impl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/boollean/dao/impl/MessageDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/boollean/dao/impl/MessageDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/boollean/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/boollean/dao/impl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/boollean/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/boollean/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/boollean/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/boollean/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/spring-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/spring-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/log4j2.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,16 +73,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/boollean/dao/impl/MessageDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-528">
-              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+            <state relative-caret-position="2506">
+              <caret line="135" selection-start-line="135" selection-end-line="135" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#init#0;class#MessageDaoImpl#0" />
                 <element signature="method#testAddMessage#0;class#MessageDaoImpl#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AppService.iml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/spring-config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="748">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
             </state>
           </provider>
         </entry>
@@ -106,11 +125,9 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/src/com/boollean/dao/UserDaoTest.java" />
-        <option value="$PROJECT_DIR$/src/struts.xml" />
         <option value="$PROJECT_DIR$/src/com/boollean/dao/ManageUser.java" />
         <option value="$PROJECT_DIR$/src/com/boollean/entity/MessageboxEntity.java" />
         <option value="$PROJECT_DIR$/src/com/boollean/entity/UserEntity.hbm.xml" />
-        <option value="$PROJECT_DIR$/src/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/com/boollean/entity/MessageboxEntity.hbm.xml" />
         <option value="$PROJECT_DIR$/src/com/boollean/dao/BaseDao.java" />
         <option value="$PROJECT_DIR$/src/com/boollean/dao/BaseAction.java" />
@@ -129,17 +146,19 @@
         <option value="$PROJECT_DIR$/src/com/boollean/entity/MessageEntity.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/web/log4j2.xml" />
-        <option value="$PROJECT_DIR$/src/spring-config.xml" />
         <option value="$PROJECT_DIR$/src/com/boollean/service/MessageService.java" />
         <option value="$PROJECT_DIR$/src/com/boollean/dao/MessageDao.java" />
+        <option value="$PROJECT_DIR$/src/com/boollean/service/impl/MessageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/struts.xml" />
+        <option value="$PROJECT_DIR$/src/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/com/boollean/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/com/boollean/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/com/boollean/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/com/boollean/dao/impl/UserDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/boollean/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/com/boollean/service/impl/MessageServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/boollean/action/MessageAction.java" />
         <option value="$PROJECT_DIR$/src/com/boollean/action/UserAction.java" />
+        <option value="$PROJECT_DIR$/src/com/boollean/action/MessageAction.java" />
         <option value="$PROJECT_DIR$/src/com/boollean/dao/impl/MessageDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/spring-config.xml" />
       </list>
     </option>
   </component>
@@ -169,8 +188,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -185,45 +202,14 @@
             </path>
             <path>
               <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppService" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="boollean" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppService" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="boollean" type="462c0819:PsiDirectoryNode" />
-              <item name="action" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppService" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="boollean" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppService" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="boollean" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppService" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -235,7 +221,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553505191884" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553591109262" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -243,7 +229,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/log4j.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -254,12 +240,12 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.boollean.dao" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="com.boollean.entity" />
       <recent name="entity" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\IdeaProjects\AppService\lib" />
@@ -277,40 +263,40 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserDaoImpl.testUpdate">
-    <configuration name="MessageDaoImpl.testAddMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UserDaoImpl.testGetAllUser">
+    <configuration name="UserAction.testBestScore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AppService" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.boollean.dao.impl.*" />
+          <option name="PATTERN" value="com.boollean.action.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.boollean.dao.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.boollean.dao.impl.MessageDaoImpl" />
-      <option name="METHOD_NAME" value="testAddMessage" />
+      <option name="PACKAGE_NAME" value="com.boollean.action" />
+      <option name="MAIN_CLASS_NAME" value="com.boollean.action.UserAction" />
+      <option name="METHOD_NAME" value="testBestScore" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MessageDaoImpl.testGetAllMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserAction.testGetUserByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AppService" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.boollean.dao.impl.*" />
+          <option name="PATTERN" value="com.boollean.action.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.boollean.dao.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.boollean.dao.impl.MessageDaoImpl" />
-      <option name="METHOD_NAME" value="testGetAllMessage" />
+      <option name="PACKAGE_NAME" value="com.boollean.action" />
+      <option name="MAIN_CLASS_NAME" value="com.boollean.action.UserAction" />
+      <option name="METHOD_NAME" value="testGetUserByName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserDaoImpl.testGetBestScore4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserDaoImpl.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AppService" />
       <extension name="coverage">
         <pattern>
@@ -320,7 +306,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.boollean.dao.impl" />
       <option name="MAIN_CLASS_NAME" value="com.boollean.dao.impl.UserDaoImpl" />
-      <option name="METHOD_NAME" value="testGetBestScore4" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDaoImpl.testGetAllUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AppService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.boollean.dao.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.boollean.dao.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.boollean.dao.impl.UserDaoImpl" />
+      <option name="METHOD_NAME" value="testGetAllUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -337,22 +339,6 @@
       <option name="PACKAGE_NAME" value="com.boollean.dao.impl" />
       <option name="MAIN_CLASS_NAME" value="com.boollean.dao.impl.UserDaoImpl" />
       <option name="METHOD_NAME" value="testUpdate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserDaoImpl.testUpdateBestScore6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AppService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.boollean.dao.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.boollean.dao.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.boollean.dao.impl.UserDaoImpl" />
-      <option name="METHOD_NAME" value="testUpdateBestScore6" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -433,11 +419,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserDaoImpl.testGetAllUser" />
+        <item itemvalue="JUnit.UserAction.testBestScore" />
+        <item itemvalue="JUnit.UserAction.testGetUserByName" />
+        <item itemvalue="JUnit.UserDaoImpl.test" />
         <item itemvalue="JUnit.UserDaoImpl.testUpdate" />
-        <item itemvalue="JUnit.MessageDaoImpl.testGetAllMessage" />
-        <item itemvalue="JUnit.MessageDaoImpl.testAddMessage" />
-        <item itemvalue="JUnit.UserDaoImpl.testGetBestScore4" />
-        <item itemvalue="JUnit.UserDaoImpl.testUpdateBestScore6" />
       </list>
     </recent_temporary>
   </component>
@@ -458,43 +444,44 @@
       <workItem from="1553231442849" duration="4936000" />
       <workItem from="1553238905395" duration="1797000" />
       <workItem from="1553487689806" duration="17552000" />
+      <workItem from="1553576355678" duration="14130000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MessageDaoImpl_testGetAllMessage - 2019.03.25 at 13h 47m 23s.xml">
-      <configuration name="MessageDaoImpl.testGetAllMessage" configurationId="JUnit" />
+    <history-entry file="UserDaoImpl_test - 2019.03.26 at 14h 11m 16s.xml">
+      <configuration name="UserDaoImpl.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MessageDaoImpl_testAddMessage - 2019.03.25 at 14h 01m 37s.xml">
-      <configuration name="MessageDaoImpl.testAddMessage" configurationId="JUnit" />
+    <history-entry file="UserAction_testGetUserByName - 2019.03.26 at 14h 42m 42s.xml">
+      <configuration name="UserAction.testGetUserByName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MessageDaoImpl_testAddMessage - 2019.03.25 at 14h 11m 05s.xml">
-      <configuration name="MessageDaoImpl.testAddMessage" configurationId="JUnit" />
+    <history-entry file="UserAction_testGetUserByName - 2019.03.26 at 14h 43m 17s.xml">
+      <configuration name="UserAction.testGetUserByName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MessageDaoImpl_testAddMessage - 2019.03.25 at 14h 11m 51s.xml">
-      <configuration name="MessageDaoImpl.testAddMessage" configurationId="JUnit" />
+    <history-entry file="UserDaoImpl_testGetAllUser - 2019.03.26 at 14h 51m 33s.xml">
+      <configuration name="UserDaoImpl.testGetAllUser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MessageDaoImpl_testAddMessage - 2019.03.25 at 14h 13m 32s.xml">
-      <configuration name="MessageDaoImpl.testAddMessage" configurationId="JUnit" />
+    <history-entry file="UserDaoImpl_testGetAllUser - 2019.03.26 at 14h 59m 24s.xml">
+      <configuration name="UserDaoImpl.testGetAllUser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MessageDaoImpl_testAddMessage - 2019.03.25 at 14h 16m 47s.xml">
-      <configuration name="MessageDaoImpl.testAddMessage" configurationId="JUnit" />
+    <history-entry file="UserAction_testGetUserByName - 2019.03.26 at 15h 01m 24s.xml">
+      <configuration name="UserAction.testGetUserByName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MessageDaoImpl_testAddMessage - 2019.03.25 at 14h 18m 17s.xml">
-      <configuration name="MessageDaoImpl.testAddMessage" configurationId="JUnit" />
+    <history-entry file="UserAction_testGetUserByName - 2019.03.26 at 15h 57m 08s.xml">
+      <configuration name="UserAction.testGetUserByName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MessageDaoImpl_testAddMessage - 2019.03.25 at 14h 20m 15s.xml">
-      <configuration name="MessageDaoImpl.testAddMessage" configurationId="JUnit" />
+    <history-entry file="UserAction_testGetUserByName - 2019.03.26 at 16h 02m 00s.xml">
+      <configuration name="UserAction.testGetUserByName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MessageDaoImpl_testGetAllMessage - 2019.03.25 at 14h 31m 14s.xml">
-      <configuration name="MessageDaoImpl.testGetAllMessage" configurationId="JUnit" />
+    <history-entry file="UserAction_testBestScore - 2019.03.26 at 16h 07m 54s.xml">
+      <configuration name="UserAction.testBestScore" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDaoImpl_testUpdate - 2019.03.25 at 14h 36m 42s.xml">
-      <configuration name="UserDaoImpl.testUpdate" configurationId="JUnit" />
+    <history-entry file="UserDaoImpl_testGetAllUser - 2019.03.26 at 16h 51m 16s.xml">
+      <configuration name="UserDaoImpl.testGetAllUser" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67182000" />
+    <option name="totallyTimeSpent" value="81312000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -508,7 +495,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4919355" visible="true" weight="0.1603631" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4919355" visible="true" weight="0.16263238" />
       <window_info id="Structure" order="1" sideWeight="0.50341684" side_tool="true" weight="0.25340393" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" sideWeight="0.5072464" side_tool="true" weight="0.15582451" />
@@ -553,18 +540,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e3ed934d-fc67-4dec-90ab-62b7704d94b0/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/19a63f2b-766e-4795-b798-ba7649382a9a/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6f61e724-c8be-4852-9a73-d2722c1e7b1b/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a248d2ce-236f-45d0-9d5f-846d751019b9/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -577,13 +552,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
           <caret line="49" column="49" lean-forward="true" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/hibernate-core-5.4.1.Final.jar!/org/hibernate/SessionFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -680,13 +648,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boollean/UserManageAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boollean/UserManageAction.java" />
     <entry file="jar://$PROJECT_DIR$/lib/hibernate-core-5.4.1.Final.jar!/org/hibernate/Session.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -708,13 +670,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://a248d2ce-236f-45d0-9d5f-846d751019b9/schema/appservice/table/messagebox">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://a248d2ce-236f-45d0-9d5f-846d751019b9/schema/appservice/table/messagebox" />
     <entry file="file://$PROJECT_DIR$/src/com/boollean/entity/MessageEntity.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -722,24 +678,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boollean/entity/MessageEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://a248d2ce-236f-45d0-9d5f-846d751019b9/schema/appservice/table/message">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://a248d2ce-236f-45d0-9d5f-846d751019b9/schema/appservice/table/user">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -754,19 +693,6 @@
       </provider>
       <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/AppService.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boollean/service/MessageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/boollean/dao/MessageDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -777,10 +703,119 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/struts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boollean/entity/MessageEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/javax.servlet.jar!/javax/servlet/http/HttpSession.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring-orm-4.3.18.RELEASE.jar!/org/springframework/orm/hibernate5/support/HibernateDaoSupport.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://a248d2ce-236f-45d0-9d5f-846d751019b9/schema/appservice/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring-orm-4.3.18.RELEASE.jar!/org/springframework/orm/hibernate5/HibernateTemplate.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="222" column="11" lean-forward="true" selection-start-line="222" selection-start-column="11" selection-end-line="222" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring-orm-4.3.18.RELEASE.jar!/org/springframework/orm/hibernate5/LocalSessionFactoryBean.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boollean/service/impl/MessageServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#406#407#0" expanded="true" />
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#702#703#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
+            <element signature="e#836#837#0" expanded="true" />
+            <element signature="e#912#913#0" expanded="true" />
+            <element signature="e#976#977#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/hibernate-core-5.4.1.Final.jar!/org/hibernate/SessionFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="78" selection-start-line="16" selection-start-column="78" selection-end-line="16" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring-beans-4.3.18.RELEASE.jar!/org/springframework/beans/factory/annotation/Autowired.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/json-20180813.jar!/org/json/JSONArray.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/boollean/dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+        <state relative-caret-position="330">
+          <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boollean/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="138" column="35" lean-forward="true" selection-start-line="138" selection-start-column="35" selection-end-line="138" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -789,91 +824,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/boollean/dao/impl/UserDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+        <state relative-caret-position="2817">
+          <caret line="407" column="30" selection-start-line="407" selection-start-column="30" selection-end-line="407" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getAllUser#0;class#UserDaoImpl#0" />
             <element signature="method#getBestScore4ByName#0;class#UserDaoImpl#0" />
             <element signature="method#getBestScore5ByName#0;class#UserDaoImpl#0" />
             <element signature="method#getBestScore6ByName#0;class#UserDaoImpl#0" />
             <element signature="method#listBest100Users4#0;class#UserDaoImpl#0" />
             <element signature="method#listBest100Users5#0;class#UserDaoImpl#0" />
             <element signature="method#listBest100Users6#0;class#UserDaoImpl#0" />
+            <element signature="method#isUserNameAvailable#0;class#UserDaoImpl#0" />
+            <element signature="method#testName#0;class#UserDaoImpl#0" />
+            <element signature="method#addUser#0;class#UserDaoImpl#0" />
+            <element signature="method#testAddUser#0;class#UserDaoImpl#0" />
             <element signature="method#getUserByName#0;class#UserDaoImpl#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boollean/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#290#291#0" expanded="true" />
-            <element signature="e#320#321#0" expanded="true" />
-            <element signature="e#367#368#0" expanded="true" />
-            <element signature="e#405#406#0" expanded="true" />
-            <element signature="e#511#512#0" expanded="true" />
-            <element signature="e#1472#1473#0" expanded="true" />
-            <element signature="e#1527#1528#0" expanded="true" />
+            <element signature="method#teatGetByName#0;class#UserDaoImpl#0" />
+            <element signature="method#updateUserByName#0;class#UserDaoImpl#0" />
+            <element signature="method#testUpdate#0;class#UserDaoImpl#0" />
+            <element signature="method#updateBestScore4#0;class#UserDaoImpl#0" />
+            <element signature="method#updateBestScore5#0;class#UserDaoImpl#0" />
+            <element signature="method#updateBestScore6#0;class#UserDaoImpl#0" />
+            <element signature="method#updateUserDataByName#0;class#UserDaoImpl#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/boollean/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+        <state relative-caret-position="394">
+          <caret line="37" column="12" lean-forward="true" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boollean/service/impl/MessageServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/com/boollean/service/MessageService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="36" column="57" selection-start-line="36" selection-start-column="57" selection-end-line="36" selection-end-column="57" />
+        <state relative-caret-position="308">
+          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#641#642#0" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
-            <element signature="e#774#775#0" expanded="true" />
-            <element signature="e#800#801#0" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#938#939#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="58" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/spring-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/struts.xml">
-      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="51" lean-forward="true" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/boollean/action/MessageAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="1650">
+          <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#412#413#0" expanded="true" />
@@ -894,23 +894,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/boollean/action/UserAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+        <state relative-caret-position="416">
+          <caret line="144" column="8" lean-forward="true" selection-start-line="144" selection-start-column="8" selection-end-line="149" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2836#2837#0" expanded="true" />
+            <element signature="e#2877#2878#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/AppService.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/boollean/dao/impl/MessageDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-528">
-          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+        <state relative-caret-position="2506">
+          <caret line="135" selection-start-line="135" selection-end-line="135" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#init#0;class#MessageDaoImpl#0" />
             <element signature="method#testAddMessage#0;class#MessageDaoImpl#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/spring-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
     </entry>

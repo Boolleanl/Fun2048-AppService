@@ -29,13 +29,13 @@ public interface UserDao {
 
     boolean updateUserByName(String name, UserEntity userEntity);
 
-    boolean updateUserByName(String oldName, String newName, int gender, String password, String avatar);
+    boolean updateUserDataByName(String oldName, String newName, int gender, String password, String avatar);
 
-    boolean updateBestScore4(String name, int score);
+    boolean updateBestScore4ByName(String name, int score);
 
-    boolean updateBestScore5(String name, int score);
+    boolean updateBestScore5ByName(String name, int score);
 
-    boolean updateBestScore6(String name, int score);
+    boolean updateBestScore6ByName(String name, int score);
 
     boolean deleteUserByName(String name);
 
