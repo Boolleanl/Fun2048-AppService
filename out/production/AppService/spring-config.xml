@@ -32,6 +32,7 @@
     <bean id="messageDao" class="com.boollean.dao.impl.MessageDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
+
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>

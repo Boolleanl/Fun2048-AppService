@@ -5,4 +5,95 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
+
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+
+    <package name="json-default" extends="struts-default">
+        <result-types>
+            <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+        </result-types>
+
+        <interceptors>
+            <interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>
+            <interceptor name="jsonValidation" class="org.apache.struts2.json.JSONValidationInterceptor"/>
+
+            <!-- Sample JSON validation stack -->
+            <interceptor-stack name="jsonValidationWorkflowStack">
+                <interceptor-ref name="basicStack"/>
+                <interceptor-ref name="validation">
+                    <param name="excludeMethods">input,back,cancel</param>
+                </interceptor-ref>
+                <interceptor-ref name="jsonValidation"/>
+                <interceptor-ref name="workflow"/>
+            </interceptor-stack>
+        </interceptors>
+    </package>
+
+    <package name="default" namespace="/" extends="json-default">
+        <action name="getAllUser" class="com.boollean.action.UserAction" method="getAllUser">
+            <result type="json"><param name="root">jsonData</param>
+                <param name="contentType">text/json</param>
+            </result>
+        </action>
+        <action name="getUserByName" class="com.boollean.action.UserAction" method="getUserByName">
+            <result name="success" type="json"><param name="root">jsonData</param></result>
+            <result name="fail" type="json"><param name="root">jsonData</param></result>
+        </action>
+        <action name="getBestScore4ByName" class="com.boollean.action.UserAction" method="getBestScore4ByName">
+            <result type="json"><param name="root">jsonData</param></result>
+        </action>
+        <action name="getBestScore5ByName" class="com.boollean.action.UserAction" method="getBestScore5ByName">
+            <result type="json"><param name="root">jsonData</param></result>
+        </action>
+        <action name="getBestScore6ByName" class="com.boollean.action.UserAction" method="getBestScore6ByName">
+            <result type="json"><param name="root">jsonData</param></result>
+        </action>
+        <action name="listBest100Users4" class="com.boollean.action.UserAction" method="listBest100Users4">
+            <result type="json"><param name="root">jsonData</param></result>
+        </action>
+        <action name="listBest100Users5" class="com.boollean.action.UserAction" method="listBest100Users5">
+            <result type="json"><param name="root">jsonData</param></result>
+        </action>
+        <action name="listBest100Users6" class="com.boollean.action.UserAction" method="listBest100Users6">
+            <result type="json"><param name="root">jsonData</param></result>
+        </action>
+        <action name="isUserNameAvailable" class="com.boollean.action.UserAction" method="isUserNameAvailable">
+            <result type="json"><param name="root">jsonData</param></result>
+        </action>
+        <action name="addUser" class="com.boollean.action.UserAction" method="addUser">
+            <result type="json"><param name="root">jsonData</param></result>
+        </action>
+        <action name="updateUserByName" class="com.boollean.action.UserAction" method="updateUserByName">
+            <result type="json"><param name="root">jsonData</param></result>
+        </action>
+        <action name="updateUserDataByName" class="com.boollean.action.UserAction" method="updateUserDataByName">
+            <result type="json"><param name="root">jsonData</param></result>
+        </action>
+        <action name="updateBestScore4ByName" class="com.boollean.action.UserAction" method="updateBestScore4ByName">
+            <result type="json"><param name="root">jsonData</param></result>
+        </action>
+        <action name="updateBestScore5ByName" class="com.boollean.action.UserAction" method="updateBestScore5ByName">
+            <result type="json"><param name="root">jsonData</param></result>
+        </action>
+        <action name="updateBestScore6ByName" class="com.boollean.action.UserAction" method="updateBestScore6ByName">
+            <result type="json"><param name="root">jsonData</param></result>
+        </action>
+        <action name="deleteUserByName" class="com.boollean.action.UserAction" method="deleteUserByName">
+            <result type="json"><param name="root">jsonData</param></result>
+        </action>
+
+
+        <action name="getAllMessage" class="com.boollean.action.MessageAction" method="getAllMessages">
+            <result type="json"><param name="root">jsonData</param></result>
+        </action>
+        <action name="getLatest100Messages" class="com.boollean.action.MessageAction" method="getLatest100Messages">
+            <result type="json"><param name="root">jsonData</param></result>
+        </action>
+        <action name="getLatest1000Messages" class="com.boollean.action.MessageAction" method="getLatest1000Messages">
+            <result type="json"><param name="root">jsonData</param></result>
+        </action>
+        <action name="addMessage" class="com.boollean.action.MessageAction" method="addMessage">
+            <result type="json"><param name="root">jsonData</param></result>
+        </action>
+    </package>
 </struts>

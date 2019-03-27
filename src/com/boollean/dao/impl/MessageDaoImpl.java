@@ -9,6 +9,8 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +24,8 @@ import java.util.List;
 public class MessageDaoImpl implements MessageDao {
 
     private static Configuration configuration;
+    @Autowired
+    @Qualifier("sessionFactory")
     private static SessionFactory sessionFactory;
     private static Session session;
 
@@ -134,4 +138,6 @@ public class MessageDaoImpl implements MessageDao {
         sessionFactory.close();
     }
 
+    public void setSessionFactory(LocalSessionFactoryBean sessionFactory) {
+    }
 }

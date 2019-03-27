@@ -16,6 +16,7 @@
           <element id="library" level="application" name="log4j" />
           <element id="library" level="project" name="json" />
           <element id="library" level="project" name="gson-2.2.2" />
+          <element id="library" level="project" name="struts2-json-plugin-2.5.20" />
         </element>
       </element>
     </root>

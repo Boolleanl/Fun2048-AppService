@@ -10,6 +10,8 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,7 +24,9 @@ public class UserDaoImpl implements UserDao {
 
     private static Configuration configuration;
     private static Session session;
+
     @Autowired
+    @Qualifier("sessionFactory")
     private SessionFactory sessionFactory;
 
     @Override
@@ -562,5 +566,8 @@ public class UserDaoImpl implements UserDao {
     public void close() {
         session.close();
         sessionFactory.close();
+    }
+
+    public void setSessionFactory(LocalSessionFactoryBean sessionFactory) {
     }
 }

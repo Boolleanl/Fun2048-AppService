@@ -1137,6 +1137,7 @@
       <Position>4</Position>
       <DataType>int(14)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="286" parent="280" name="msgid_UNIQUE">
@@ -1148,16 +1149,11 @@
       <ColNames>name</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="288" parent="280" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>msgid</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <key id="289" parent="280" name="msgid_UNIQUE">
+    <key id="288" parent="280" name="msgid_UNIQUE">
       <ColNames>msgid</ColNames>
       <UnderlyingIndexName>msgid_UNIQUE</UnderlyingIndexName>
     </key>
-    <foreign-key id="290" parent="280" name="mn">
+    <foreign-key id="289" parent="280" name="mn">
       <ColNames>name</ColNames>
       <RefSchemaName>appservice</RefSchemaName>
       <RefTableName>user</RefTableName>
@@ -1165,55 +1161,55 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="291" parent="281" name="name">
+    <column id="290" parent="281" name="name">
       <Position>1</Position>
       <DataType>varchar(12)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="292" parent="281" name="password">
+    <column id="291" parent="281" name="password">
       <Position>2</Position>
       <DataType>varchar(18)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="293" parent="281" name="gender">
+    <column id="292" parent="281" name="gender">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="294" parent="281" name="avatar">
+    <column id="293" parent="281" name="avatar">
       <Position>4</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="295" parent="281" name="bestscore4">
+    <column id="294" parent="281" name="bestscore4">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="296" parent="281" name="bestscore5">
+    <column id="295" parent="281" name="bestscore5">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="297" parent="281" name="bestscore6">
+    <column id="296" parent="281" name="bestscore6">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="298" parent="281" name="name_UNIQUE">
+    <index id="297" parent="281" name="name_UNIQUE">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="299" parent="281" name="PRIMARY">
+    <key id="298" parent="281" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>name</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="300" parent="281" name="name_UNIQUE">
+    <key id="299" parent="281" name="name_UNIQUE">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>name_UNIQUE</UnderlyingIndexName>
     </key>
