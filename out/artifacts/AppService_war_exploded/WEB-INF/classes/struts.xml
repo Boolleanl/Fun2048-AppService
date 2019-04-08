@@ -6,6 +6,15 @@
 
 <struts>
 
+
+    <!-- 默认的视图主题 -->
+    <constant name="struts.ui.theme" value="simple" />
+    <!-- 配置Struts改动，自动加载 -->
+    <constant name="struts.configuration.xml.reload" value="true" />
+    <!-- 配置struts为开发模式,详细错误提示 -->
+    <constant name="struts.devMode" value="false" />
+    <!-- 将对象交给spring管理 -->
+    <constant name="struts.objectFactory" value="spring" />
     <constant name="struts.i18n.encoding" value="UTF-8"/>
 
     <package name="json-default" extends="struts-default">
@@ -30,8 +39,16 @@
     </package>
 
     <package name="default" namespace="/" extends="json-default">
+        <action name="testAction" class = "userAction" method="testAction">
+            <result type="json">
+                <param name="root">jsonData</param>
+                <param name="contentType">text/json</param>
+            </result>
+        </action>
+
         <action name="getAllUser" class="com.boollean.action.UserAction" method="getAllUser">
-            <result type="json"><param name="root">jsonData</param>
+            <result type="json">
+                <param name="root">jsonData</param>
                 <param name="contentType">text/json</param>
             </result>
         </action>

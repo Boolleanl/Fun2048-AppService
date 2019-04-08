@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Iterator;
 import java.util.List;
 
-@Repository
+@Repository("USER")
 @Transactional
 public class UserDaoImpl implements UserDao {
 

@@ -68,6 +68,41 @@ public class UserAction extends ActionSupport {
         this.jsonData = jsonData;
     }
 
+    public String testAction(){
+        System.out.println("login...action...");
+
+        //获得request和response对象
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpServletResponse response = ServletActionContext.getResponse();
+
+        //设置response输出json便于调试
+        response.setContentType("application/json;charset=utf-8");
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        PrintWriter out;
+
+        try{
+            List<UserEntity> list = userService.getAllUsers();
+
+            out = response.getWriter();
+            JSONObject json = new JSONObject();
+
+            //登录失败返回0   成功返回1
+            if(list.isEmpty()) {
+                json.put("msg", "0");
+            } else {
+                json.put("msg", list.get(1).getName());
+            }
+            System.out.println(json);
+            out.write(json.toString());
+            out.flush();
+            out.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public String getAllUser(){
         System.out.println("查询所有用户。");
         List<UserEntity> list = userService.getAllUsers();
@@ -75,9 +110,13 @@ public class UserAction extends ActionSupport {
         jsonData.put("success",true);
         jsonData.put("users",list);
 
-//        Map<String, Object> session= ActionContext.getContext().getSession();
-//        session.put("users",list);
+        System.out.println(jsonData.toString());
         return "success";
+    }
+
+    @Test
+    public void runTestAction(){
+        getAllUser();
     }
 
     public String getUserByName() {
