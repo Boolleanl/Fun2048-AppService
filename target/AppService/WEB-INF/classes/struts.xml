@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <!-- 修改常量管理struts 中的action的工程，这个常量的使用，必须引入 spring和struts的整合包，不然spring无法管理struts2 Action 中的实体类-->
+    <constant name="struts.objectFactory" value="spring" />
+
+    <package name="user" extends="json-default" namespace="/">
+        <!--<action name="getAllUser" class="userAction" method="getAllUser">-->
+            <!--<result name="success" type="json">-->
+                <!--<param name="root">jsonData</param>-->
+                <!--<param name="excludeNullProperties">false</param>-->
+            <!--</result>-->
+            <!--<allowed-methods>getAllUser</allowed-methods>&lt;!&ndash; struts 2.5 之后，使用通配符必须加上这一行 ，否则无法使用通配符访问&ndash;&gt;-->
+        <!--</action>-->
+        <action name="getUser" class="userAction" method="getUserByName">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+                <param name="excludeNullProperties">false</param>
+            </result>
+        </action>
+        <action name="getScore4" class="userAction" method="getBestScore4ByName">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+                <param name="excludeNullProperties">false</param>
+            </result>
+        </action>
+        <action name="getScore5" class="userAction" method="getBestScore5ByName">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+                <param name="excludeNullProperties">false</param>
+            </result>
+        </action>
+        <action name="getScore6" class="userAction" method="getBestScore6ByName">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+                <param name="excludeNullProperties">false</param>
+            </result>
+        </action>
+        <action name="getBest100Users4" class="userAction" method="listBest100Users4">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+                <param name="excludeNullProperties">false</param>
+            </result>
+        </action>
+        <action name="getBest100Users5" class="userAction" method="listBest100Users5">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+                <param name="excludeNullProperties">false</param>
+            </result>
+        </action>
+        <action name="getBest100Users6" class="userAction" method="listBest100Users6">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+                <param name="excludeNullProperties">false</param>
+            </result>
+        </action>
+        <action name="checkName" class="userAction" method="isUserNameAvailable">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+                <param name="excludeNullProperties">false</param>
+            </result>
+        </action>
+        <action name="updateScore4" class="userAction" method="updateBestScore4ByName">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+                <param name="excludeNullProperties">false</param>
+            </result>
+        </action>
+        <action name="updateScore5" class="userAction" method="updateBestScore5ByName">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+                <param name="excludeNullProperties">false</param>
+            </result>
+        </action>
+        <action name="updateScore6" class="userAction" method="updateBestScore6ByName">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+                <param name="excludeNullProperties">false</param>
+            </result>
+        </action>
+        <action name="addUser" class="userAction" method="addUser">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+                <param name="excludeNullProperties">false</param>
+            </result>
+        </action>
+        <action name="updateUser" class="userAction" method="updateUserByName">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+                <param name="excludeNullProperties">false</param>
+            </result>
+        </action>
+        <action name="deleteUser" class="userAction" method="deleteUserByName">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+                <param name="excludeNullProperties">false</param>
+            </result>
+        </action>
+    </package>
+</struts>
