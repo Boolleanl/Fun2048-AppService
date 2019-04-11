@@ -8,14 +8,16 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.Iterator;
 import java.util.List;
 
 @Repository("messageDao")
+@Transactional
 public class MessageDaoImpl implements MessageDao {
-    @Resource(name="sessionFactory")
+    @Resource(name = "sessionFactory")
     private SessionFactory sessionFactory;
     private Session session;
 
@@ -33,6 +35,10 @@ public class MessageDaoImpl implements MessageDao {
         try {
             Query query = session.createQuery(hql);
             list = query.list();
+            for (Iterator iterator = list.iterator(); iterator.hasNext(); ) {
+                MessageEntity messageEntity = (MessageEntity) iterator.next();
+                System.out.println("Name: " + messageEntity.getTime());
+            }
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -63,14 +69,14 @@ public class MessageDaoImpl implements MessageDao {
     }
 
     @Override
-    public List<MessageEntity> getLatest1000Messages() {
+    public List<MessageEntity> getLatest200Messages() {
         //取得session对象
         session = sessionFactory.getCurrentSession();
         String hql = "FROM MessageEntity M ORDER BY M.id DESC";
         List<MessageEntity> list = null;
         try {
             Query query = session.createQuery(hql);
-            query.setMaxResults(1000);
+            query.setMaxResults(200);
             list = query.list();
         } catch (HibernateException e) {
             e.printStackTrace();
@@ -83,19 +89,19 @@ public class MessageDaoImpl implements MessageDao {
     @Override
     public boolean addMessage(MessageEntity messageEntity) {
         //取得session对象
-        session = sessionFactory.getCurrentSession();
+        session = sessionFactory.openSession();
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
             session.save(messageEntity);
             transaction.commit();
-            System.out.println("添加成功！ " + messageEntity.getName());
             return true;
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
             e.printStackTrace();
             return false;
         } finally {
+            session.close();
         }
     }
 }

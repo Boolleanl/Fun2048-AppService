@@ -1,7 +1,6 @@
 package com.boollean.entity;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 @Entity
 @Table(name = "user", schema = "appservice", catalog = "")

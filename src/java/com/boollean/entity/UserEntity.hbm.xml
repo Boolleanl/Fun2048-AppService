@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
     <class name="com.boollean.entity.UserEntity" table="user" schema="appservice">
@@ -27,10 +27,10 @@
             <column name="bestscore6" sql-type="int(11)" not-null="true"/>
         </property>
         <!--<set name="messagesByName" inverse="true">-->
-            <!--<key>-->
-                <!--<column name="name"/>-->
-            <!--</key>-->
-            <!--<one-to-many not-found="ignore" class="com.boollean.entity.MessageEntity"/>-->
+        <!--<key>-->
+        <!--<column name="name"/>-->
+        <!--</key>-->
+        <!--<one-to-many not-found="ignore" class="com.boollean.entity.MessageEntity"/>-->
         <!--</set>-->
     </class>
 </hibernate-mapping>

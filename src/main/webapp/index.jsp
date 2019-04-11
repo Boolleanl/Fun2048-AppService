@@ -7,8 +7,6 @@
     <title>ssh测试</title>
 </head>
 <body>
-
-<%-- 获取值栈中的user对象的uname的值--%>
-用户名： <s:property value="userEntity.name"></s:property>
+Hello world
 </body>
 </html>

@@ -6,21 +6,19 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
-import org.junit.Test;
-import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.Iterator;
 import java.util.List;
-import javax.annotation.Resource;
 
 @Repository(value = "userDao")
+@Transactional
 public class UserDaoImpl implements UserDao {
 
-    @Resource(name="sessionFactory")
+    @Resource(name = "sessionFactory")
     private SessionFactory sessionFactory;
     private Session session;
 
@@ -306,6 +304,35 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
+
+    @Transactional
+    @Override
+    public boolean updateUserDataByName(String oldName, String newName, int gender, String password, String avatar) {
+        //取得session对象
+        session = sessionFactory.openSession();
+        Transaction transaction = null;
+        String hql = "UPDATE UserEntity U set U.name = :newName, U.avatar = :avatar, U.gender = :gender, U.password = :password "
+                + "WHERE U.name = :oldName";
+        try {
+            transaction = session.beginTransaction();
+            Query query = session.createQuery(hql);
+            query.setParameter("newName", newName);
+            query.setParameter("avatar", avatar);
+            query.setParameter("gender", gender);
+            query.setParameter("password", password);
+            query.setParameter("oldName", oldName);
+            query.executeUpdate();
+            transaction.commit();
+            return true;
+        } catch (HibernateException e) {
+            if (transaction != null) transaction.rollback();
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
+    }
+
     /**
      * 更新用户4*4模式的最高记录
      *
@@ -347,25 +374,25 @@ public class UserDaoImpl implements UserDao {
     @Transactional
     @Override
     public boolean updateBestScore5ByName(String name, int score) {
-            //取得session对象
-            session = sessionFactory.openSession();
-            Transaction transaction = null;
-            String hql = "UPDATE UserEntity U set U.bestscore5 = :score "
-                    + "WHERE U.name = :name";
-            try {
-                transaction = session.beginTransaction();
-                Query query = session.createQuery(hql);
-                query.setParameter("score", score);
-                query.setParameter("name", name);
-                query.executeUpdate();
-                transaction.commit();
-                return true;
-            } catch (HibernateException e) {
-                if (transaction != null) transaction.rollback();
-                e.printStackTrace();
-            } finally {
-                session.close();
-            }
+        //取得session对象
+        session = sessionFactory.openSession();
+        Transaction transaction = null;
+        String hql = "UPDATE UserEntity U set U.bestscore5 = :score "
+                + "WHERE U.name = :name";
+        try {
+            transaction = session.beginTransaction();
+            Query query = session.createQuery(hql);
+            query.setParameter("score", score);
+            query.setParameter("name", name);
+            query.executeUpdate();
+            transaction.commit();
+            return true;
+        } catch (HibernateException e) {
+            if (transaction != null) transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
         return false;
     }
 
@@ -379,55 +406,28 @@ public class UserDaoImpl implements UserDao {
     @Transactional
     @Override
     public boolean updateBestScore6ByName(String name, int score) {
-            //取得session对象
-            session = sessionFactory.openSession();
-            Transaction transaction = null;
-            String hql = "UPDATE UserEntity U set U.bestscore6 = :score "
-                    + "WHERE U.name = :name";
-            try {
-                transaction = session.beginTransaction();
-                Query query = session.createQuery(hql);
-                query.setParameter("score", score);
-                query.setParameter("name", name);
-                query.executeUpdate();
-                transaction.commit();
-                return true;
-            } catch (HibernateException e) {
-                if (transaction != null) transaction.rollback();
-                e.printStackTrace();
-            } finally {
-                session.close();
-            }
-        return false;
-    }
-
-    @Transactional
-    @Override
-    public boolean updateUserDataByName(String oldName, String newName, int gender, String password, String avatar) {
         //取得session对象
         session = sessionFactory.openSession();
         Transaction transaction = null;
-        String hql = "UPDATE UserEntity U set U.name = :newName, U.avatar = :avatar, U.gender = :gender, U.password = :password "
-                + "WHERE U.name = :oldName";
+        String hql = "UPDATE UserEntity U set U.bestscore6 = :score "
+                + "WHERE U.name = :name";
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery(hql);
-            query.setParameter("newName", newName);
-            query.setParameter("avatar", avatar);
-            query.setParameter("gender", gender);
-            query.setParameter("password", password);
-            query.setParameter("oldName", oldName);
+            query.setParameter("score", score);
+            query.setParameter("name", name);
             query.executeUpdate();
             transaction.commit();
             return true;
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
             e.printStackTrace();
-            return false;
         } finally {
             session.close();
         }
+        return false;
     }
+
 
     /**
      * 通过姓名来删除用户

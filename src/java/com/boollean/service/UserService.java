@@ -2,7 +2,6 @@ package com.boollean.service;
 
 import com.boollean.Utils.RankUser;
 import com.boollean.entity.UserEntity;
-import com.boollean.service.impl.UserServiceImpl;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

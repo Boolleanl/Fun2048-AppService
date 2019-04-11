@@ -25,13 +25,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(rollbackFor = {Exception.class,RuntimeException.class})
+    @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
     public List<UserEntity> getAllUsers() {
         return this.userDao.getAllUsers();
     }
 
     @Override
-    @Transactional(rollbackFor = {Exception.class,RuntimeException.class})
+    @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
     public UserEntity getUserByName(String name) {
         if (name.trim().isEmpty()) {
             return null;
@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(rollbackFor = {Exception.class,RuntimeException.class})
+    @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
     public int getBestScore4ByName(String name) {
         if (name.trim().isEmpty()) {
             return 0;
@@ -49,7 +49,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(rollbackFor = {Exception.class,RuntimeException.class})
+    @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
     public int getBestScore5ByName(String name) {
         if (name.trim().isEmpty()) {
             System.out.println("姓名不能为空");
@@ -59,7 +59,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(rollbackFor = {Exception.class,RuntimeException.class})
+    @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
     public int getBestScore6ByName(String name) {
         if (name.trim().isEmpty()) {
             System.out.println("姓名不能为空");
@@ -69,30 +69,30 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(rollbackFor = {Exception.class,RuntimeException.class})
+    @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
     public List<RankUser> listBest100Users4() {
         List<UserEntity> list = this.userDao.listBest100Users4();
         List<RankUser> rankUsers = new LinkedList<>();
         for (int i = 0; i < list.size(); i++) {
-             RankUser user = new RankUser();
-             user.setPosition(i+1);
-             user.setName(list.get(i).getName());
-             user.setGender(list.get(i).getGender());
-             user.setAvatar(list.get(i).getAvatar());
-             user.setScore(list.get(i).getBestscore4());
-             rankUsers.add(user);
+            RankUser user = new RankUser();
+            user.setPosition(i + 1);
+            user.setName(list.get(i).getName());
+            user.setGender(list.get(i).getGender());
+            user.setAvatar(list.get(i).getAvatar());
+            user.setScore(list.get(i).getBestscore4());
+            rankUsers.add(user);
         }
         return rankUsers;
     }
 
     @Override
-    @Transactional(rollbackFor = {Exception.class,RuntimeException.class})
+    @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
     public List<RankUser> listBest100Users5() {
         List<UserEntity> list = this.userDao.listBest100Users5();
         List<RankUser> rankUsers = new LinkedList<>();
         for (int i = 0; i < list.size(); i++) {
             RankUser user = new RankUser();
-            user.setPosition(i+1);
+            user.setPosition(i + 1);
             user.setName(list.get(i).getName());
             user.setGender(list.get(i).getGender());
             user.setAvatar(list.get(i).getAvatar());
@@ -103,13 +103,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(rollbackFor = {Exception.class,RuntimeException.class})
+    @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
     public List<RankUser> listBest100Users6() {
         List<UserEntity> list = this.userDao.listBest100Users6();
         List<RankUser> rankUsers = new LinkedList<>();
         for (int i = 0; i < list.size(); i++) {
             RankUser user = new RankUser();
-            user.setPosition(i+1);
+            user.setPosition(i + 1);
             user.setName(list.get(i).getName());
             user.setGender(list.get(i).getGender());
             user.setAvatar(list.get(i).getAvatar());
@@ -120,7 +120,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(rollbackFor = {Exception.class,RuntimeException.class})
+    @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
     public boolean isUserNameAvailable(String name) {
         if (name.trim().isEmpty()) {
             return false;
@@ -134,7 +134,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(rollbackFor = {Exception.class,RuntimeException.class})
+    @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
     public boolean addUser(UserEntity userEntity) {
         if (isUserNameAvailable(userEntity.getName())) {
             return this.userDao.addUser(userEntity);
@@ -142,7 +142,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(rollbackFor = {Exception.class,RuntimeException.class})
+    @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
     public boolean updateUserByName(String name, UserEntity userEntity) {
         if (isUserNameAvailable(userEntity.getName())) {
             return this.userDao.updateUserByName(name, userEntity);
@@ -150,7 +150,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(rollbackFor = {Exception.class,RuntimeException.class})
+    @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
     public boolean updateUserDataByName(String oldName, String newName, int gender, String password, String avatar) {
         if (isUserNameAvailable(newName)) {
             return this.userDao.updateUserDataByName(oldName, newName, gender, password, avatar);
@@ -158,7 +158,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(rollbackFor = {Exception.class,RuntimeException.class})
+    @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
     public boolean updateBestScore4ByName(String name, int score) {
         if (name.trim().isEmpty() || score < 0) {
             return false;
@@ -167,7 +167,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(rollbackFor = {Exception.class,RuntimeException.class})
+    @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
     public boolean updateBestScore5ByName(String name, int score) {
         if (name.trim().isEmpty() || score < 0) {
             return false;
@@ -176,7 +176,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(rollbackFor = {Exception.class,RuntimeException.class})
+    @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
     public boolean updateBestScore6ByName(String name, int score) {
         if (name.trim().isEmpty() || score < 0) {
             return false;
@@ -185,7 +185,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(rollbackFor = {Exception.class,RuntimeException.class})
+    @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
     public boolean deleteUserByName(String name) {
         if (name.trim().isEmpty()) {
             return false;

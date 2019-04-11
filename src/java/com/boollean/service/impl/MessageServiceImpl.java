@@ -5,11 +5,12 @@ import com.boollean.entity.MessageEntity;
 import com.boollean.service.MessageService;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service("messageService")
 public class MessageServiceImpl implements MessageService {
-
+    @Resource
     private MessageDao messageDao;
 
     public MessageDao getMessageDao() {
@@ -31,8 +32,8 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @Override
-    public List<MessageEntity> getLatest1000Messages() {
-        return this.messageDao.getLatest1000Messages();
+    public List<MessageEntity> getLatest200Messages() {
+        return this.messageDao.getLatest200Messages();
     }
 
     @Override

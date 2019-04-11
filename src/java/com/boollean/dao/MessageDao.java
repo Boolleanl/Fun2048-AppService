@@ -9,7 +9,7 @@ public interface MessageDao {
 
     List<MessageEntity> getLatest100Messages();
 
-    List<MessageEntity> getLatest1000Messages();
+    List<MessageEntity> getLatest200Messages();
 
     boolean addMessage(MessageEntity messageEntity);
 }

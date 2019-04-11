@@ -7,10 +7,10 @@ import java.io.InputStreamReader;
 
 public class GetRequestBodyUtils {
     public static String getRequestJsonString(HttpServletRequest request) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(request.getInputStream(),"UTF-8"));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(request.getInputStream(), "UTF-8"));
         String s = "";
         String jsonString = "";
-        while ((s = reader.readLine())!=null){
+        while ((s = reader.readLine()) != null) {
             jsonString += s;
             System.out.println(jsonString);
         }
