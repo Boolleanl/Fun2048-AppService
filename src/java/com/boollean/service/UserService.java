@@ -4,19 +4,20 @@ import com.boollean.Utils.RankUser;
 import com.boollean.entity.UserEntity;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Service("userService")
 public interface UserService {
     List<UserEntity> getAllUsers();
 
-    UserEntity getUserByName(String name);
+    UserEntity getUserByName();
 
-    int getBestScore4ByName(String name);
+    int getBestScore4ByName();
 
-    int getBestScore5ByName(String name);
+    int getBestScore5ByName();
 
-    int getBestScore6ByName(String name);
+    int getBestScore6ByName();
 
     List<RankUser> listBest100Users4();
 
@@ -26,17 +27,17 @@ public interface UserService {
 
     boolean isUserNameAvailable(String name);
 
-    boolean addUser(UserEntity userEntity);
+    boolean addUser();
 
     boolean updateUserByName(String name, UserEntity userEntity);
 
-    boolean updateUserDataByName(String oldName, String newName, int gender, String password, String avatar);
+    boolean updateUserDataByName();
 
-    boolean updateBestScore4ByName(String name, int score);
+    boolean updateBestScore4ByName();
 
-    boolean updateBestScore5ByName(String name, int score);
+    boolean updateBestScore5ByName();
 
-    boolean updateBestScore6ByName(String name, int score);
+    boolean updateBestScore6ByName();
 
-    boolean deleteUserByName(String name);
+    boolean deleteUserByName();
 }

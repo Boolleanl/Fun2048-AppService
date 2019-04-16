@@ -2,6 +2,8 @@ package com.boollean.dao.impl;
 
 import com.boollean.dao.UserDao;
 import com.boollean.entity.UserEntity;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -22,6 +24,9 @@ public class UserDaoImpl implements UserDao {
     private SessionFactory sessionFactory;
     private Session session;
 
+    //获取日志记录器Logger，名字为本类类名
+    private static Logger logger = LogManager.getLogger(UserDaoImpl.class);
+
     /**
      * 查询所有用户
      *
@@ -29,6 +34,7 @@ public class UserDaoImpl implements UserDao {
      */
     @Override
     public List<UserEntity> getAllUsers() {
+        logger.info("读取所有用户信息");
         //取得session对象
         session = sessionFactory.getCurrentSession();
         String hql = "FROM UserEntity";
@@ -48,8 +54,15 @@ public class UserDaoImpl implements UserDao {
         return list;
     }
 
+
+    /**
+     * 读取指定姓名用户的4*4模式最高分
+     * @param name 用户名
+     * @return 4*4模式最高分
+     */
     @Override
     public int getBestScore4ByName(String name) {
+        logger.info("读取 "+name+" 的4*4模式最高分");
         int result = 0;
         //取得session对象
         session = sessionFactory.getCurrentSession();
@@ -71,8 +84,14 @@ public class UserDaoImpl implements UserDao {
         return result;
     }
 
+    /**
+     * 读取指定姓名用户的5*5模式最高分
+     * @param name 用户名
+     * @return 5*5模式最高分
+     */
     @Override
     public int getBestScore5ByName(String name) {
+        logger.info("读取 "+name+" 的5*5模式最高分");
         int result = 0;
         //取得session对象
         session = sessionFactory.getCurrentSession();
@@ -94,8 +113,14 @@ public class UserDaoImpl implements UserDao {
         return result;
     }
 
+    /**
+     * 读取指定姓名用户的6*6模式最高分
+     * @param name 用户名
+     * @return 6*6模式最高分
+     */
     @Override
     public int getBestScore6ByName(String name) {
+        logger.info("读取 "+name+" 的6*6模式最高分");
         int result = 0;
         //取得session对象
         session = sessionFactory.getCurrentSession();
@@ -120,10 +145,11 @@ public class UserDaoImpl implements UserDao {
     /**
      * 查询4*4模式分数最高的前一百个用户
      *
-     * @return
+     * @return 包含一百人的List
      */
     @Override
     public List<UserEntity> listBest100Users4() {
+        logger.info("4*4模式最高分的前一百人");
         //取得session对象
         session = sessionFactory.getCurrentSession();
         String hql = "FROM UserEntity U WHERE U.bestscore4 > 0 ORDER BY U.bestscore4 DESC ,U.name asc";
@@ -148,10 +174,11 @@ public class UserDaoImpl implements UserDao {
     /**
      * 查询5*5模式分数最高的前一百个用户
      *
-     * @return
+     * @return 包含一百人的List
      */
     @Override
     public List<UserEntity> listBest100Users5() {
+        logger.info("5*5模式最高分的前一百人");
         //取得session对象
         session = sessionFactory.getCurrentSession();
         String hql = "FROM UserEntity U WHERE U.bestscore5 > 0 ORDER BY U.bestscore5 DESC ,U.name asc";
@@ -176,10 +203,11 @@ public class UserDaoImpl implements UserDao {
     /**
      * 查询6*6模式分数最高的前一百个用户
      *
-     * @return
+     * @return 包含一百人的List
      */
     @Override
     public List<UserEntity> listBest100Users6() {
+        logger.info("6*6模式最高分的前一百人");
         //取得session对象
         session = sessionFactory.getCurrentSession();
         String hql = "FROM UserEntity U WHERE U.bestscore6 > 0 ORDER BY U.bestscore6 DESC ,U.name asc";
@@ -208,6 +236,7 @@ public class UserDaoImpl implements UserDao {
      */
     @Override
     public boolean isUserNameAvailable(String name) {
+        logger.info("判断 "+name+" 是否在数据库内");
         //取得session对象
         session = sessionFactory.getCurrentSession();
         String queryString = "FROM UserEntity U WHERE U.name = ?1";
@@ -226,10 +255,11 @@ public class UserDaoImpl implements UserDao {
     /**
      * 加入一个用户到数据库中
      *
-     * @return
+     * @return 加入成功与否
      */
     @Override
     public boolean addUser(UserEntity userEntity) {
+        logger.info("加入一个用户到数据库");
         //取得session对象
         session = sessionFactory.openSession();
         Transaction transaction = null;
@@ -250,10 +280,11 @@ public class UserDaoImpl implements UserDao {
     /**
      * 通过姓名来查询用户
      *
-     * @return
+     * @return 用户对象
      */
     @Override
     public UserEntity getUserByName(String name) {
+        logger.info("获取 " + name + " 的信息");
         //取得session对象
         session = sessionFactory.getCurrentSession();
         String hql = "FROM UserEntity U WHERE U.name = ?1";
@@ -278,11 +309,12 @@ public class UserDaoImpl implements UserDao {
      *
      * @param oldName    更改信息前的用户姓名
      * @param userEntity 新的用户信息生成的用户实体
-     * @return
+     * @return 更新成功与否
      */
     @Transactional
     @Override
     public boolean updateUserByName(String oldName, UserEntity userEntity) {
+        logger.info("将原来存在的 "+oldName+" 用户信息更新");
         //取得session对象
         session = sessionFactory.openSession();
         Transaction transaction = null;
@@ -304,10 +336,19 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
-
+    /**
+     * 根据参数更改用户信息
+     * @param oldName 原来的用户名，作为判断依据
+     * @param newName 新的用户名
+     * @param gender 新的性别
+     * @param password 新的密码
+     * @param avatar 新的头像
+     * @return 更改成功与否
+     */
     @Transactional
     @Override
     public boolean updateUserDataByName(String oldName, String newName, int gender, String password, String avatar) {
+        logger.info("将原有的 "+oldName+" 用户信息更新");
         //取得session对象
         session = sessionFactory.openSession();
         Transaction transaction = null;
@@ -342,6 +383,7 @@ public class UserDaoImpl implements UserDao {
      */
     @Override
     public boolean updateBestScore4ByName(String name, int score) {
+        logger.info("更新 "+name+" 用户的4*4模式最高分");
         //取得session对象
         session = sessionFactory.openSession();
         Transaction transaction = null;
@@ -374,6 +416,7 @@ public class UserDaoImpl implements UserDao {
     @Transactional
     @Override
     public boolean updateBestScore5ByName(String name, int score) {
+        logger.info("更新 "+name+" 用户的5*5模式最高分");
         //取得session对象
         session = sessionFactory.openSession();
         Transaction transaction = null;
@@ -406,6 +449,7 @@ public class UserDaoImpl implements UserDao {
     @Transactional
     @Override
     public boolean updateBestScore6ByName(String name, int score) {
+        logger.info("更新 "+name+" 用户的6*6模式最高分");
         //取得session对象
         session = sessionFactory.openSession();
         Transaction transaction = null;
@@ -438,6 +482,7 @@ public class UserDaoImpl implements UserDao {
     @Transactional
     @Override
     public boolean deleteUserByName(String name) {
+        logger.info("删除 "+name+" 的信息");
         String hql = "DELETE FROM UserEntity U WHERE U.name = ?1";
         Transaction transaction = null;
         try {

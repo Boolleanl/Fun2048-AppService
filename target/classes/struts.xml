@@ -100,8 +100,9 @@
                 <param name="excludeNullProperties">false</param>
             </result>
         </action>
+    </package>
 
-
+    <package name="message" extends="json-default" namespace="/">
         <action name="getAllMessages" class="messageAction" method="getAllMessages">
             <result name="success" type="json">
                 <param name="root">jsonData</param>

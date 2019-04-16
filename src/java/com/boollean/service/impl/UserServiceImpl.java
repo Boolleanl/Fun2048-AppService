@@ -1,13 +1,21 @@
 package com.boollean.service.impl;
 
+import com.boollean.Utils.GetRequestBodyUtils;
 import com.boollean.Utils.RankUser;
 import com.boollean.dao.UserDao;
 import com.boollean.entity.UserEntity;
 import com.boollean.service.UserService;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import org.apache.struts2.ServletActionContext;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -32,7 +40,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
-    public UserEntity getUserByName(String name) {
+    public UserEntity getUserByName() {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String name = request.getParameter("name");
         if (name.trim().isEmpty()) {
             return null;
         }
@@ -41,7 +51,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
-    public int getBestScore4ByName(String name) {
+    public int getBestScore4ByName() {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String name = request.getParameter("name");
         if (name.trim().isEmpty()) {
             return 0;
         }
@@ -50,7 +62,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
-    public int getBestScore5ByName(String name) {
+    public int getBestScore5ByName() {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String name = request.getParameter("name");
         if (name.trim().isEmpty()) {
             System.out.println("姓名不能为空");
             return 0;
@@ -60,7 +74,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
-    public int getBestScore6ByName(String name) {
+    public int getBestScore6ByName() {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String name = request.getParameter("name");
         if (name.trim().isEmpty()) {
             System.out.println("姓名不能为空");
             return 0;
@@ -135,7 +151,25 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
-    public boolean addUser(UserEntity userEntity) {
+    public boolean addUser() {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String jsonString = null;
+        try {
+            jsonString = GetRequestBodyUtils.getRequestJsonString(request);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //获得解析者
+        JsonParser jsonParser = new JsonParser();
+        //获得根节点元素
+        JsonElement root = jsonParser.parse(jsonString);
+        //根据文档判断根节点属于什么类型的Gson节点对象
+        JsonObject element = root.getAsJsonObject();
+        //取得节点下的某个节点的value
+
+        JsonObject jsonObject = element.getAsJsonObject("subject");
+        Gson gson = new Gson();
+        UserEntity userEntity = gson.fromJson(jsonObject, UserEntity.class);
         if (isUserNameAvailable(userEntity.getName())) {
             return this.userDao.addUser(userEntity);
         } else return false;
@@ -144,23 +178,66 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
     public boolean updateUserByName(String name, UserEntity userEntity) {
+        if(this.userDao.isUserNameAvailable(name)){
+            return false;
+        }
         if (isUserNameAvailable(userEntity.getName())) {
             return this.userDao.updateUserByName(name, userEntity);
-        } else return false;
+        }
+        return false;
     }
 
     @Override
     @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
-    public boolean updateUserDataByName(String oldName, String newName, int gender, String password, String avatar) {
+    public boolean updateUserDataByName() {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String jsonString = null;
+        try {
+            jsonString = GetRequestBodyUtils.getRequestJsonString(request);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+        System.out.println(jsonString);
+        //获得解析者
+        JsonParser jsonParser = new JsonParser();
+        //获得根节点元素
+        JsonElement root = jsonParser.parse(jsonString);
+        //根据文档判断根节点属于什么类型的Gson节点对象
+        JsonObject object = root.getAsJsonObject();
+        String oldName = object.get("oldName").getAsString();
+        System.out.println(oldName);
+
+        JsonObject jsonObject = object.getAsJsonObject("subject");
+        System.out.println(jsonObject.toString());
+
+        String newName = jsonObject.get("name").getAsString();
+        System.out.println(newName);
+
+        int gender = jsonObject.get("gender").getAsInt();
+        String password = jsonObject.get("password").getAsString();
+        String avatar = jsonObject.get("avatar").getAsString();
+
+        if(this.userDao.isUserNameAvailable(oldName)){
+            return false;
+        }
         if (isUserNameAvailable(newName)) {
             return this.userDao.updateUserDataByName(oldName, newName, gender, password, avatar);
-        } else return false;
+        }
+        return false;
     }
 
     @Override
     @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
-    public boolean updateBestScore4ByName(String name, int score) {
+    public boolean updateBestScore4ByName() {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String name = request.getParameter("name");
+        String s = request.getParameter("score");
+        int score = Integer.parseInt(s);
         if (name.trim().isEmpty() || score < 0) {
+            return false;
+        }
+        if(this.userDao.isUserNameAvailable(name)){
             return false;
         }
         return this.userDao.updateBestScore4ByName(name, score);
@@ -168,8 +245,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
-    public boolean updateBestScore5ByName(String name, int score) {
+    public boolean updateBestScore5ByName() {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String name = request.getParameter("name");
+        String s = request.getParameter("score");
+        int score = Integer.parseInt(s);
         if (name.trim().isEmpty() || score < 0) {
+            return false;
+        }
+        if(this.userDao.isUserNameAvailable(name)){
             return false;
         }
         return this.userDao.updateBestScore5ByName(name, score);
@@ -177,8 +261,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
-    public boolean updateBestScore6ByName(String name, int score) {
+    public boolean updateBestScore6ByName() {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String name = request.getParameter("name");
+        String s = request.getParameter("score");
+        int score = Integer.parseInt(s);
         if (name.trim().isEmpty() || score < 0) {
+            return false;
+        }
+        if(this.userDao.isUserNameAvailable(name)){
             return false;
         }
         return this.userDao.updateBestScore6ByName(name, score);
@@ -186,8 +277,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
-    public boolean deleteUserByName(String name) {
+    public boolean deleteUserByName() {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String name = request.getParameter("name");
         if (name.trim().isEmpty()) {
+            return false;
+        }
+        if(this.userDao.isUserNameAvailable(name)){
             return false;
         }
         return this.userDao.deleteUserByName(name);

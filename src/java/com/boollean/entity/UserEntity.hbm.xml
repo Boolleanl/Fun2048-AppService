@@ -26,11 +26,5 @@
         <property name="bestscore6">
             <column name="bestscore6" sql-type="int(11)" not-null="true"/>
         </property>
-        <!--<set name="messagesByName" inverse="true">-->
-        <!--<key>-->
-        <!--<column name="name"/>-->
-        <!--</key>-->
-        <!--<one-to-many not-found="ignore" class="com.boollean.entity.MessageEntity"/>-->
-        <!--</set>-->
     </class>
 </hibernate-mapping>

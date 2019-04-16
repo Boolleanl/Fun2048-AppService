@@ -12,7 +12,6 @@ public class UserEntity {
     private Integer bestscore4;
     private Integer bestscore5;
     private Integer bestscore6;
-//    private Collection<MessageEntity> messagesByName;
 
     @Id
     @Column(name = "name", nullable = false, length = 12)
@@ -113,13 +112,4 @@ public class UserEntity {
         result = 31 * result + (bestscore6 != null ? bestscore6.hashCode() : 0);
         return result;
     }
-
-//    @OneToMany(mappedBy = "userByName")
-//    public Collection<MessageEntity> getMessagesByName() {
-//        return messagesByName;
-//    }
-//
-//    public void setMessagesByName(Collection<MessageEntity> messagesByName) {
-//        this.messagesByName = messagesByName;
-//    }
 }

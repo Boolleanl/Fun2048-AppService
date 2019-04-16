@@ -59,39 +59,29 @@ public class MessageAction extends ActionSupport {
     public String getLatest100Messages() {
         List<MessageEntity> list = messageService.getLatest100Messages();
         reSetJsonData();
-        jsonData.put("messages", list);
+        jsonData.put("subjects", list);
         return "success";
     }
 
     public String getLatest200Messages() {
         List<MessageEntity> list = messageService.getLatest200Messages();
         reSetJsonData();
-        jsonData.put("messages", list);
+        jsonData.put("subjects", list);
         return "success";
     }
 
     public String addMessage() {
-        reSetJsonData();
+        jsonData.clear();
+        jsonData.put("code",200);
         try {
-            HttpServletRequest request = ServletActionContext.getRequest();
-            String jsonString = GetRequestBodyUtils.getRequestJsonString(request);
-            //获得解析者
-            JsonParser jsonParser = new JsonParser();
-            //获得根节点元素
-            JsonElement root = jsonParser.parse(jsonString);
-            //根据文档判断根节点属于什么类型的Gson节点对象
-            JsonObject element = root.getAsJsonObject();
-            //取得节点下的某个节点的value
-
-            JsonObject jsonObject = element.getAsJsonObject("subject");
-            Gson gson = new Gson();
-            MessageEntity messageEntity = gson.fromJson(jsonObject, MessageEntity.class);
-            if (messageService.addMessage(messageEntity)) {
-                jsonData.put("subject", "OK");
+            if (messageService.addMessage()) {
+                jsonData.put("msg", "success");
+            }else {
+                jsonData.put("msg","fail");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            jsonData.put("subject", "FAIL");
+            jsonData.put("msg", "fail");
         } finally {
             return "success";
         }

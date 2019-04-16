@@ -2,6 +2,8 @@ package com.boollean.dao.impl;
 
 import com.boollean.dao.MessageDao;
 import com.boollean.entity.MessageEntity;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -20,6 +22,8 @@ public class MessageDaoImpl implements MessageDao {
     @Resource(name = "sessionFactory")
     private SessionFactory sessionFactory;
     private Session session;
+    //获取日志记录器Logger，名字为本类类名
+    private static Logger logger = LogManager.getLogger(MessageDaoImpl.class);
 
     /**
      * 查询所有留言
@@ -28,6 +32,7 @@ public class MessageDaoImpl implements MessageDao {
      */
     @Override
     public List<MessageEntity> getAllMessages() {
+        logger.info("读取所有留言信息");
         //取得session对象
         session = sessionFactory.getCurrentSession();
         String hql = "FROM MessageEntity M ORDER BY M.id DESC";
@@ -37,7 +42,7 @@ public class MessageDaoImpl implements MessageDao {
             list = query.list();
             for (Iterator iterator = list.iterator(); iterator.hasNext(); ) {
                 MessageEntity messageEntity = (MessageEntity) iterator.next();
-                System.out.println("Name: " + messageEntity.getTime());
+                System.out.println("Name: " + messageEntity.getDate());
             }
         } catch (HibernateException e) {
             e.printStackTrace();
@@ -48,6 +53,7 @@ public class MessageDaoImpl implements MessageDao {
 
     @Override
     public List<MessageEntity> getLatest100Messages() {
+        logger.info("读取100条留言信息");
         //取得session对象
         session = sessionFactory.getCurrentSession();
         String hql = "FROM MessageEntity M ORDER BY M.id DESC";
@@ -56,20 +62,15 @@ public class MessageDaoImpl implements MessageDao {
             Query query = session.createQuery(hql);
             query.setMaxResults(100);
             list = query.list();
-            for (Iterator iterator = list.iterator(); iterator.hasNext(); ) {
-                MessageEntity messageEntity = (MessageEntity) iterator.next();
-                System.out.println("ID: " + messageEntity.getMsgid() + "  Name= " + messageEntity.getName());
-            }
         } catch (HibernateException e) {
             e.printStackTrace();
-        } finally {
-
-        }
+        } finally {}
         return list;
     }
 
     @Override
     public List<MessageEntity> getLatest200Messages() {
+        logger.info("读取200条留言信息");
         //取得session对象
         session = sessionFactory.getCurrentSession();
         String hql = "FROM MessageEntity M ORDER BY M.id DESC";
@@ -80,14 +81,13 @@ public class MessageDaoImpl implements MessageDao {
             list = query.list();
         } catch (HibernateException e) {
             e.printStackTrace();
-        } finally {
-
-        }
+        } finally {}
         return list;
     }
 
     @Override
     public boolean addMessage(MessageEntity messageEntity) {
+        logger.info("新增一条留言信息");
         //取得session对象
         session = sessionFactory.openSession();
         Transaction transaction = null;

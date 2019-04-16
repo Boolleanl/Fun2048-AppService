@@ -14,5 +14,5 @@ public interface MessageService {
 
     List<MessageEntity> getLatest200Messages();
 
-    boolean addMessage(MessageEntity messageEntity);
+    boolean addMessage();
 }

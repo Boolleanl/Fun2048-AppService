@@ -37,7 +37,6 @@
           <element id="library" level="project" name="Maven: org.apache.struts:struts2-core:2.5.20" />
           <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.28" />
           <element id="library" level="project" name="Maven: ognl:ognl:3.1.21" />
-          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.11.1" />
           <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.4" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.6" />
           <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.8.1" />
@@ -64,6 +63,8 @@
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-annotations-api:8.5.23" />
           <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.5" />
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-core:2.11.2" />
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.11.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">

@@ -10,10 +10,9 @@ import java.sql.Timestamp;
 @Table(name = "message", schema = "appservice", catalog = "")
 public class MessageEntity {
     private String name;
-    private Timestamp time;
-    private String msg;
+    private Timestamp date;
+    private String message;
     private int msgid;
-//    private UserEntity userByName;
 
     @Basic
     @Column(name = "name", nullable = false, length = 12)
@@ -26,23 +25,23 @@ public class MessageEntity {
     }
 
     @Basic
-    @Column(name = "time", nullable = false)
-    public Timestamp getTime() {
-        return time;
+    @Column(name = "date", nullable = false)
+    public Timestamp getDate() {
+        return date;
     }
 
-    public void setTime(Timestamp time) {
-        this.time = time;
+    public void setDate(Timestamp time) {
+        this.date = time;
     }
 
     @Basic
-    @Column(name = "msg", nullable = false, length = 140)
-    public String getMsg() {
-        return msg;
+    @Column(name = "message", nullable = false, length = 140)
+    public String getMessage() {
+        return message;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setMessage(String msg) {
+        this.message = msg;
     }
 
     @Basic
@@ -64,8 +63,8 @@ public class MessageEntity {
 
         if (msgid != that.msgid) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (time != null ? !time.equals(that.time) : that.time != null) return false;
-        if (msg != null ? !msg.equals(that.msg) : that.msg != null) return false;
+        if (date != null ? !date.equals(that.date) : that.date != null) return false;
+        if (message != null ? !message.equals(that.message) : that.message != null) return false;
 
         return true;
     }
@@ -73,19 +72,9 @@ public class MessageEntity {
     @Override
     public int hashCode() {
         int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (time != null ? time.hashCode() : 0);
-        result = 31 * result + (msg != null ? msg.hashCode() : 0);
+        result = 31 * result + (date != null ? date.hashCode() : 0);
+        result = 31 * result + (message != null ? message.hashCode() : 0);
         result = 31 * result + msgid;
         return result;
     }
-
-//    @ManyToOne
-//    @JoinColumn(name = "name", referencedColumnName = "name", nullable = false)
-//    public UserEntity getUserByName() {
-//        return userByName;
-//    }
-//
-//    public void setUserByName(UserEntity userByName) {
-//        this.userByName = userByName;
-//    }
 }
