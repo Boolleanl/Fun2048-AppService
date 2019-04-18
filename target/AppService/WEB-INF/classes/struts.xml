@@ -88,13 +88,19 @@
                 <param name="excludeNullProperties">false</param>
             </result>
         </action>
-        <action name="updateUser" class="userAction" method="updateUserDataByName">
+        <action name="updateUser" class="userAction" method="updateUserByName">
             <result name="success" type="json">
                 <param name="root">jsonData</param>
                 <param name="excludeNullProperties">false</param>
             </result>
         </action>
-        <action name="deleteUser" class="userAction" method="deleteUserByName">
+        <action name="updateUserData" class="userAction" method="updateUserDataByName">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+                <param name="excludeNullProperties">false</param>
+            </result>
+        </action>
+        <action name="deleteUser" class="userAction" method="deleteUser">
             <result name="success" type="json">
                 <param name="root">jsonData</param>
                 <param name="excludeNullProperties">false</param>

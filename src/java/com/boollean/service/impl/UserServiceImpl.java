@@ -177,19 +177,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
-    public boolean updateUserByName(String name, UserEntity userEntity) {
-        if(this.userDao.isUserNameAvailable(name)){
-            return false;
-        }
-        if (isUserNameAvailable(userEntity.getName())) {
-            return this.userDao.updateUserByName(name, userEntity);
-        }
-        return false;
-    }
-
-    @Override
-    @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
-    public boolean updateUserDataByName() {
+    public boolean updateUserByName() {
         HttpServletRequest request = ServletActionContext.getRequest();
         String jsonString = null;
         try {
@@ -212,19 +200,46 @@ public class UserServiceImpl implements UserService {
         System.out.println(jsonObject.toString());
 
         String newName = jsonObject.get("name").getAsString();
-        System.out.println(newName);
-
         int gender = jsonObject.get("gender").getAsInt();
         String password = jsonObject.get("password").getAsString();
-        String avatar = jsonObject.get("avatar").getAsString();
+        //String avatar = jsonObject.get("bitmapPath").getAsString();
+        String avatar = "avatarPath";
 
-        if(this.userDao.isUserNameAvailable(oldName)){
-            return false;
-        }
         if (isUserNameAvailable(newName)) {
-            return this.userDao.updateUserDataByName(oldName, newName, gender, password, avatar);
+            return this.userDao.updateUserByName(oldName, newName, gender, password, avatar);
         }
         return false;
+    }
+
+    @Override
+    @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
+    public boolean updateUserDataByName() {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String jsonString = null;
+        try {
+            jsonString = GetRequestBodyUtils.getRequestJsonString(request);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+        System.out.println(jsonString);
+        //获得解析者
+        JsonParser jsonParser = new JsonParser();
+        //获得根节点元素
+        JsonElement root = jsonParser.parse(jsonString);
+        //根据文档判断根节点属于什么类型的Gson节点对象
+        JsonObject object = root.getAsJsonObject();
+
+        JsonObject jsonObject = object.getAsJsonObject("subject");
+        System.out.println(jsonObject.toString());
+
+        String name = jsonObject.get("name").getAsString();
+        int gender = jsonObject.get("gender").getAsInt();
+        String password = jsonObject.get("password").getAsString();
+        //String avatar = jsonObject.get("bitmapPath").getAsString();
+        String avatar = "avatarPath";
+
+        return this.userDao.updateUserDataByName(name, gender, password, avatar);
     }
 
     @Override
@@ -237,7 +252,7 @@ public class UserServiceImpl implements UserService {
         if (name.trim().isEmpty() || score < 0) {
             return false;
         }
-        if(this.userDao.isUserNameAvailable(name)){
+        if (this.userDao.isUserNameAvailable(name)) {
             return false;
         }
         return this.userDao.updateBestScore4ByName(name, score);
@@ -253,7 +268,7 @@ public class UserServiceImpl implements UserService {
         if (name.trim().isEmpty() || score < 0) {
             return false;
         }
-        if(this.userDao.isUserNameAvailable(name)){
+        if (this.userDao.isUserNameAvailable(name)) {
             return false;
         }
         return this.userDao.updateBestScore5ByName(name, score);
@@ -269,7 +284,7 @@ public class UserServiceImpl implements UserService {
         if (name.trim().isEmpty() || score < 0) {
             return false;
         }
-        if(this.userDao.isUserNameAvailable(name)){
+        if (this.userDao.isUserNameAvailable(name)) {
             return false;
         }
         return this.userDao.updateBestScore6ByName(name, score);
@@ -277,15 +292,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
-    public boolean deleteUserByName() {
+    public boolean deleteUser() {
         HttpServletRequest request = ServletActionContext.getRequest();
         String name = request.getParameter("name");
+        String password = request.getParameter("password");
         if (name.trim().isEmpty()) {
             return false;
         }
-        if(this.userDao.isUserNameAvailable(name)){
+        if (this.userDao.isUserNameAvailable(name)) {
             return false;
         }
-        return this.userDao.deleteUserByName(name);
+        return this.userDao.deleteUser(name,password);
     }
 }

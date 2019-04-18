@@ -1,13 +1,8 @@
 package com.boollean.action;
 
-import com.boollean.Utils.GetRequestBodyUtils;
 import com.boollean.Utils.RankUser;
 import com.boollean.entity.UserEntity;
 import com.boollean.service.UserService;
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
@@ -124,52 +119,32 @@ public class UserAction extends ActionSupport {
 
     public String addUser() {
         jsonData.clear();
-        jsonData.put("code",200);
+        jsonData.put("code", 200);
         if (userService.addUser()) {
-            jsonData.put("msg","success");
-        }else {
+            jsonData.put("msg", "success");
+        } else {
             jsonData.put("msg", "fail");
         }
         return "success";
     }
 
-//    public String updateUserByName() {
-//        reSetJsonData();
-//        try {
-//            HttpServletRequest request = ServletActionContext.getRequest();
-//            String jsonString = GetRequestBodyUtils.getRequestJsonString(request);
-//            System.out.println(jsonString);
-//            //获得解析者
-//            JsonParser jsonParser = new JsonParser();
-//            //获得根节点元素
-//            JsonElement root = jsonParser.parse(jsonString);
-//            //根据文档判断根节点属于什么类型的Gson节点对象
-//            JsonObject object = root.getAsJsonObject();
-//
-//            String oldName = object.get("oldName").getAsString();
-//            System.out.println(oldName);
-//
-//            JsonObject jsonObject = object.getAsJsonObject("subject");
-//            System.out.println(jsonObject.toString());
-//            Gson gson = new Gson();
-//            UserEntity userEntity = gson.fromJson(jsonObject, UserEntity.class);
-//            if (userService.updateUserByName(oldName,userEntity)) {
-//                jsonData.put("subject","OK");
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            jsonData.put("subject","FAIL");
-//        } finally {
-//            return "success";
-//        }
-//    }
+    public String updateUserByName() {
+        jsonData.clear();
+        jsonData.put("code", 200);
+        if (userService.updateUserByName()) {
+            jsonData.put("msg", "success");
+        } else {
+            jsonData.put("msg", "fail");
+        }
+        return "success";
+    }
 
     public String updateUserDataByName() {
         jsonData.clear();
-        jsonData.put("code",200);
+        jsonData.put("code", 200);
         if (userService.updateUserDataByName()) {
             jsonData.put("msg", "success");
-        }else {
+        } else {
             jsonData.put("msg", "fail");
         }
         return "success";
@@ -177,7 +152,7 @@ public class UserAction extends ActionSupport {
 
     public String updateBestScore4ByName() {
         jsonData.clear();
-        jsonData.put("code",200);
+        jsonData.put("code", 200);
         if (userService.updateBestScore4ByName()) {
             jsonData.put("msg", "success");
         } else {
@@ -188,7 +163,7 @@ public class UserAction extends ActionSupport {
 
     public String updateBestScore5ByName() {
         jsonData.clear();
-        jsonData.put("code",200);
+        jsonData.put("code", 200);
         if (userService.updateBestScore5ByName()) {
             jsonData.put("msg", "success");
         } else {
@@ -199,7 +174,7 @@ public class UserAction extends ActionSupport {
 
     public String updateBestScore6ByName() {
         jsonData.clear();
-        jsonData.put("code",200);
+        jsonData.put("code", 200);
         if (userService.updateBestScore6ByName()) {
             jsonData.put("msg", "success");
         } else {
@@ -208,10 +183,10 @@ public class UserAction extends ActionSupport {
         return "success";
     }
 
-    public String deleteUserByName() {
+    public String deleteUser() {
         jsonData.clear();
-        jsonData.put("code",200);
-        if (userService.deleteUserByName()) {
+        jsonData.put("code", 200);
+        if (userService.deleteUser()) {
             jsonData.put("msg", "success");
         } else {
             jsonData.put("msg", "fail");

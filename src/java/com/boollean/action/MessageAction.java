@@ -1,19 +1,12 @@
 package com.boollean.action;
 
-import com.boollean.Utils.GetRequestBodyUtils;
 import com.boollean.entity.MessageEntity;
 import com.boollean.service.MessageService;
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import com.opensymphony.xwork2.ActionSupport;
-import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -72,12 +65,12 @@ public class MessageAction extends ActionSupport {
 
     public String addMessage() {
         jsonData.clear();
-        jsonData.put("code",200);
+        jsonData.put("code", 200);
         try {
             if (messageService.addMessage()) {
                 jsonData.put("msg", "success");
-            }else {
-                jsonData.put("msg","fail");
+            } else {
+                jsonData.put("msg", "fail");
             }
         } catch (Exception e) {
             e.printStackTrace();

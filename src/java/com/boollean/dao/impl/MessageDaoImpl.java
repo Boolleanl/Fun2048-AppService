@@ -19,17 +19,12 @@ import java.util.List;
 @Repository("messageDao")
 @Transactional
 public class MessageDaoImpl implements MessageDao {
+    //获取日志记录器Logger，名字为本类类名
+    private static Logger logger = LogManager.getLogger(MessageDaoImpl.class);
     @Resource(name = "sessionFactory")
     private SessionFactory sessionFactory;
     private Session session;
-    //获取日志记录器Logger，名字为本类类名
-    private static Logger logger = LogManager.getLogger(MessageDaoImpl.class);
 
-    /**
-     * 查询所有留言
-     *
-     * @return 保存所有留言的列表
-     */
     @Override
     public List<MessageEntity> getAllMessages() {
         logger.info("读取所有留言信息");
@@ -64,7 +59,8 @@ public class MessageDaoImpl implements MessageDao {
             list = query.list();
         } catch (HibernateException e) {
             e.printStackTrace();
-        } finally {}
+        } finally {
+        }
         return list;
     }
 
@@ -81,7 +77,8 @@ public class MessageDaoImpl implements MessageDao {
             list = query.list();
         } catch (HibernateException e) {
             e.printStackTrace();
-        } finally {}
+        } finally {
+        }
         return list;
     }
 
