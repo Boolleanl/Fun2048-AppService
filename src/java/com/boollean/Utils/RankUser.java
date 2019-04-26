@@ -1,5 +1,8 @@
 package com.boollean.Utils;
 
+/**
+ * @author Boollean
+ */
 public class RankUser {
 
     private int position;

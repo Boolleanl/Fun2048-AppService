@@ -4,7 +4,11 @@ import com.boollean.entity.UserEntity;
 
 import java.util.List;
 
+/**
+ * @author Boollean
+ */
 public interface UserDao {
+
     /**
      * 查询所有用户信息
      * @return 包含所有用户的List

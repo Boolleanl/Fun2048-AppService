@@ -6,6 +6,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @author Boollean
+ */
 @Service("userService")
 public interface UserService {
     /**

@@ -18,6 +18,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * @author Boollean
+ */
 @Service("messageService")
 public class MessageServiceImpl implements MessageService {
     @Resource
@@ -70,6 +73,9 @@ public class MessageServiceImpl implements MessageService {
         return this.messageDao.addMessage(messageEntity);
     }
 
+    /**
+     * 时间类型转换类，用于将输入的时间转换为数据库可识别的时间格式
+     */
     private class TimestampTypeAdapter implements JsonSerializer<Timestamp>, JsonDeserializer<Timestamp> {
         private final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 

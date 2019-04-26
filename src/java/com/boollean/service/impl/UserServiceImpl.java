@@ -19,6 +19,9 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * @author Boollean
+ */
 @Service("userService")
 public class UserServiceImpl implements UserService {
     @Resource

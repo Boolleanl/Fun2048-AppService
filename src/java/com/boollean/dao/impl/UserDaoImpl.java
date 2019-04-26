@@ -16,6 +16,9 @@ import javax.annotation.Resource;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * @author Boollean
+ */
 @Repository(value = "userDao")
 @Transactional
 public class UserDaoImpl implements UserDao {
@@ -36,10 +39,7 @@ public class UserDaoImpl implements UserDao {
         try {
             Query query = session.createQuery(hql);
             list = query.list();
-            for (Iterator iterator = list.iterator(); iterator.hasNext(); ) {
-                UserEntity userEntity = (UserEntity) iterator.next();
-                System.out.println("Name: " + userEntity.getName());
-            }
+            logger.info("获取了 "+list.size()+" 条用户信息");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -59,11 +59,11 @@ public class UserDaoImpl implements UserDao {
             Query query = session.createQuery(hql);
             query.setParameter("name", name);
             if (query.list().isEmpty()) {
-                System.out.println("4*4模式最高分： " + result);
+                logger.info("名字无效");
                 return result;
             }
             result = (int) query.list().get(0);
-            System.out.println("4*4模式最高分： " + result);
+            logger.info(name + "的4*4模式最高分为 "+result+" 分");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -83,11 +83,11 @@ public class UserDaoImpl implements UserDao {
             Query query = session.createQuery(hql);
             query.setParameter("name", name);
             if (query.list().isEmpty()) {
-                System.out.println("5*5模式最高分： " + result);
+                logger.info("名字无效");
                 return result;
             }
             result = (int) query.list().get(0);
-            System.out.println("5*5模式最高分： " + result);
+            logger.info(name + "的5*5模式最高分为 "+result+" 分");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -107,11 +107,11 @@ public class UserDaoImpl implements UserDao {
             Query query = session.createQuery(hql);
             query.setParameter("name", name);
             if (query.list().isEmpty()) {
-                System.out.println("6*6模式最高分： " + result);
+                logger.info("名字无效");
                 return result;
             }
             result = (int) query.list().get(0);
-            System.out.println("6*6模式最高分： " + result);
+            logger.info(name + "的6*6模式最高分为 "+result+" 分");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -131,11 +131,7 @@ public class UserDaoImpl implements UserDao {
             Query query = session.createQuery(hql);
             query.setMaxResults(100);
             list = query.list();
-            for (Iterator iterator = list.iterator(); iterator.hasNext(); ) {
-                UserEntity userEntity = (UserEntity) iterator.next();
-                System.out.print("Name: " + userEntity.getName());
-                System.out.println("  4*4分数： " + userEntity.getBestscore4());
-            }
+            logger.info("共有 "+list.size()+" 条用户信息");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -155,11 +151,7 @@ public class UserDaoImpl implements UserDao {
             Query query = session.createQuery(hql);
             query.setMaxResults(100);
             list = query.list();
-            for (Iterator iterator = list.iterator(); iterator.hasNext(); ) {
-                UserEntity userEntity = (UserEntity) iterator.next();
-                System.out.print("Name: " + userEntity.getName());
-                System.out.println("  5*5分数： " + userEntity.getBestscore5());
-            }
+            logger.info("共有 "+list.size()+" 条用户信息");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -179,11 +171,7 @@ public class UserDaoImpl implements UserDao {
             Query query = session.createQuery(hql);
             query.setMaxResults(100);
             list = query.list();
-            for (Iterator iterator = list.iterator(); iterator.hasNext(); ) {
-                UserEntity userEntity = (UserEntity) iterator.next();
-                System.out.print("Name: " + userEntity.getName());
-                System.out.println("  6*6分数： " + userEntity.getBestscore6());
-            }
+            logger.info("共有 "+list.size()+" 条用户信息");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -201,12 +189,14 @@ public class UserDaoImpl implements UserDao {
         try {
             Query query = session.createQuery(queryString).setParameter(1, name);
             if (query.list().isEmpty()) {
+                logger.info("名字可用");
                 return true;
             }
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
         }
+        logger.info("名字不可用");
         return false;
     }
 
@@ -220,9 +210,11 @@ public class UserDaoImpl implements UserDao {
             transaction = session.beginTransaction();
             session.save(userEntity);
             transaction.commit();
+            logger.info("添加用户成功！");
             return true;
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
+            logger.info("添加用户成功！");
             e.printStackTrace();
             return false;
         } finally {
@@ -241,6 +233,7 @@ public class UserDaoImpl implements UserDao {
             Query query = session.createQuery(hql).setParameter("name", name);
             list = query.list();
             if (list.isEmpty()) {
+                logger.info("查无此人");
                 return null;
             }
         } catch (HibernateException e) {
@@ -248,7 +241,6 @@ public class UserDaoImpl implements UserDao {
         } finally {
         }
         UserEntity userEntity = list.get(0);
-        System.out.println(userEntity.getName());
         return userEntity;
     }
 
@@ -269,9 +261,11 @@ public class UserDaoImpl implements UserDao {
             query.setParameter("oldName", oldName);
             query.executeUpdate();
             transaction.commit();
+            logger.info("更新用户信息成功！");
             return true;
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
+            logger.info("更新用户信息失败！");
             e.printStackTrace();
             return false;
         } finally {
@@ -297,9 +291,11 @@ public class UserDaoImpl implements UserDao {
             query.setParameter("name", name);
             query.executeUpdate();
             transaction.commit();
+            logger.info("更新用户信息成功！");
             return true;
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
+            logger.info("更新用户信息失败！");
             e.printStackTrace();
             return false;
         } finally {
@@ -322,9 +318,11 @@ public class UserDaoImpl implements UserDao {
             query.setParameter("name", name);
             query.executeUpdate();
             transaction.commit();
+            logger.info("更新用户信息成功！");
             return true;
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
+            logger.info("更新用户信息失败！");
             e.printStackTrace();
             return false;
         } finally {
@@ -348,9 +346,11 @@ public class UserDaoImpl implements UserDao {
             query.setParameter("name", name);
             query.executeUpdate();
             transaction.commit();
+            logger.info("更新用户信息成功！");
             return true;
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
+            logger.info("更新用户信息失败！");
             e.printStackTrace();
         } finally {
             session.close();
@@ -374,9 +374,11 @@ public class UserDaoImpl implements UserDao {
             query.setParameter("name", name);
             query.executeUpdate();
             transaction.commit();
+            logger.info("更新用户信息成功！");
             return true;
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
+            logger.info("更新用户信息失败！");
             e.printStackTrace();
         } finally {
             session.close();
@@ -400,12 +402,15 @@ public class UserDaoImpl implements UserDao {
             int result = query.executeUpdate();
             transaction.commit();
             if(result>0){
+                logger.info("删除用户成功！");
                 return true;
             }else {
+                logger.info("没有此用户！");
                 return false;
             }
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
+            logger.info("删除用户失败！");
             e.printStackTrace();
             return false;
         } finally {

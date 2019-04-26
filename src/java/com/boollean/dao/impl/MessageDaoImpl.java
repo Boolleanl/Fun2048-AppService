@@ -13,9 +13,11 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.Iterator;
 import java.util.List;
 
+/**
+ * @author Boollean
+ */
 @Repository("messageDao")
 @Transactional
 public class MessageDaoImpl implements MessageDao {
@@ -35,10 +37,7 @@ public class MessageDaoImpl implements MessageDao {
         try {
             Query query = session.createQuery(hql);
             list = query.list();
-            for (Iterator iterator = list.iterator(); iterator.hasNext(); ) {
-                MessageEntity messageEntity = (MessageEntity) iterator.next();
-                System.out.println("Name: " + messageEntity.getDate());
-            }
+            logger.info("获取了 "+list.size()+" 条留言信息");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -55,8 +54,10 @@ public class MessageDaoImpl implements MessageDao {
         List<MessageEntity> list = null;
         try {
             Query query = session.createQuery(hql);
+            //获取最多100条记录
             query.setMaxResults(100);
             list = query.list();
+            logger.info("获取了 "+list.size()+" 条留言信息");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -73,8 +74,10 @@ public class MessageDaoImpl implements MessageDao {
         List<MessageEntity> list = null;
         try {
             Query query = session.createQuery(hql);
+            //获取最多200条记录
             query.setMaxResults(200);
             list = query.list();
+            logger.info("获取了 "+list.size()+" 条留言信息");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -92,9 +95,11 @@ public class MessageDaoImpl implements MessageDao {
             transaction = session.beginTransaction();
             session.save(messageEntity);
             transaction.commit();
+            logger.info("新增信息成功！");
             return true;
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
+            logger.info("新增信息失败！");
             e.printStackTrace();
             return false;
         } finally {

@@ -4,7 +4,11 @@ import com.boollean.entity.MessageEntity;
 
 import java.util.List;
 
+/**
+ * @author Boollean
+ */
 public interface MessageDao {
+
     /**
      * 查询所有留言信息
      * @return 包含所有留言信息的List

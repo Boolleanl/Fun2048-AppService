@@ -9,6 +9,7 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "message", schema = "appservice", catalog = "")
 public class MessageEntity {
+
     private String name;
     private Timestamp date;
     private String message;

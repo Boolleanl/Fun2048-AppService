@@ -5,6 +5,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @author Boollean
+ */
 @Service("messageService")
 public interface MessageService {
 
