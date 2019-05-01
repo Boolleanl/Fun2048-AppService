@@ -106,4 +106,10 @@ public interface UserService {
      * @return 删除是否成功
      */
     boolean deleteUser();
+
+    /**
+     * 根据用户名更新用户头像
+     * @return 更新成功与否
+     */
+    boolean uploadImage();
 }

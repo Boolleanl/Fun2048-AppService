@@ -9,12 +9,17 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.io.FilenameUtils;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
@@ -205,11 +210,9 @@ public class UserServiceImpl implements UserService {
         String newName = jsonObject.get("name").getAsString();
         int gender = jsonObject.get("gender").getAsInt();
         String password = jsonObject.get("password").getAsString();
-        //String avatar = jsonObject.get("bitmapPath").getAsString();
-        String avatar = "avatarPath";
 
         if (isUserNameAvailable(newName)) {
-            return this.userDao.updateUserByName(oldName, newName, gender, password, avatar);
+            return this.userDao.updateUserByName(oldName, newName, gender, password);
         }
         return false;
     }
@@ -239,10 +242,8 @@ public class UserServiceImpl implements UserService {
         String name = jsonObject.get("name").getAsString();
         int gender = jsonObject.get("gender").getAsInt();
         String password = jsonObject.get("password").getAsString();
-        //String avatar = jsonObject.get("bitmapPath").getAsString();
-        String avatar = "avatarPath";
 
-        return this.userDao.updateUserDataByName(name, gender, password, avatar);
+        return this.userDao.updateUserDataByName(name, gender, password);
     }
 
     @Override
@@ -306,5 +307,55 @@ public class UserServiceImpl implements UserService {
             return false;
         }
         return this.userDao.deleteUser(name,password);
+    }
+
+    @Override
+    @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
+    public boolean uploadImage() {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String message = "";
+        try{
+            DiskFileItemFactory dff = new DiskFileItemFactory();
+            ServletFileUpload sfu = new ServletFileUpload(dff);
+            List<FileItem> items = sfu.parseRequest(request);
+            for(FileItem item:items){
+
+                    // 获取上传字段
+                    String filename = item.getName();
+                    String name = null;
+                    if (filename != null) {
+                        name = request.getParameter("name");
+                        filename = name + "." + FilenameUtils.getExtension(filename);
+                    }
+                    // 生成存储路径
+                    String storeDirectory = "D:"+File.separator+"Avatars";
+                    File fileDirectory = new File(storeDirectory);
+                    if (!fileDirectory.exists()) {
+                        fileDirectory.mkdir();
+                    }
+                    // 处理文件的上传
+                    try {
+                        File file = new File(storeDirectory + File.separator + filename);
+                        if (file.exists()){
+                            file.delete();
+                        }
+                        item.write(new File(storeDirectory , filename));
+
+                        String filePath = storeDirectory + File.separator + filename;
+                        System.out.println("filePath="+filePath);
+                        message = filePath;
+                        return this.userDao.updateAvatar(name,filePath);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        message = "上传图片失败";
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            message = "上传图片失败";
+        } finally {
+            System.out.println(message);
+        }
+        return false;
     }
 }

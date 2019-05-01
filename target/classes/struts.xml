@@ -106,6 +106,12 @@
                 <param name="excludeNullProperties">false</param>
             </result>
         </action>
+        <action name="uploadImage" class="userAction" method="uploadImage">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+                <param name="excludeNullProperties">false</param>
+            </result>
+        </action>
     </package>
 
     <package name="message" extends="json-default" namespace="/">

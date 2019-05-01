@@ -81,20 +81,18 @@ public interface UserDao {
      * @param newName 新的用户名
      * @param gender 新的性别
      * @param password 新的密码
-     * @param avatar 新的头像
      * @return 更新是否成功
      */
-    boolean updateUserByName(String oldName, String newName, int gender, String password, String avatar);
+    boolean updateUserByName(String oldName, String newName, int gender, String password);
 
     /**
      * 更新用户信息（除了用户名）
      * @param name     用户名
      * @param gender   新的性别
      * @param password 新的密码
-     * @param avatar   新的头像
      * @return 更改成功与否
      */
-    boolean updateUserDataByName(String name, int gender, String password, String avatar);
+    boolean updateUserDataByName(String name, int gender, String password);
 
     /**
      * 更新用户4*4模式的最高记录
@@ -127,4 +125,12 @@ public interface UserDao {
      * @return 删除是否成功
      */
     boolean deleteUser(String name ,String password);
+
+    /**
+     * 根据用户名更新用户头像
+     * @param name 用户名
+     * @param avatarPath 头像所在的位置
+     * @return 更新是否成功
+     */
+    boolean updateAvatar(String name, String avatarPath);
 }

@@ -245,17 +245,16 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean updateUserByName(String oldName, String newName, int gender, String password, String avatar) {
+    public boolean updateUserByName(String oldName, String newName, int gender, String password) {
         logger.info("将原来存在的 " + oldName + " 用户信息更新");
         //取得session对象
         session = sessionFactory.openSession();
         Transaction transaction = null;
-        String hql2 = "UPDATE UserEntity U set U.name = :newName, U.avatar = :avatar, U.gender = :gender, U.password = :password WHERE U.name = :oldName";
+        String hql2 = "UPDATE UserEntity U set U.name = :newName, U.gender = :gender, U.password = :password WHERE U.name = :oldName";
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery(hql2);
             query.setParameter("newName", newName);
-            query.setParameter("avatar", avatar);
             query.setParameter("gender", gender);
             query.setParameter("password", password);
             query.setParameter("oldName", oldName);
@@ -275,17 +274,16 @@ public class UserDaoImpl implements UserDao {
 
     @Transactional
     @Override
-    public boolean updateUserDataByName(String name, int gender, String password, String avatar) {
+    public boolean updateUserDataByName(String name, int gender, String password) {
         logger.info("将原有的 " + name + " 用户信息更新");
         //取得session对象
         session = sessionFactory.openSession();
         Transaction transaction = null;
-        String hql = "UPDATE UserEntity U set U.avatar = :avatar, U.gender = :gender, U.password = :password "
+        String hql = "UPDATE UserEntity U set U.gender = :gender, U.password = :password "
                 + "WHERE U.name = :name";
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery(hql);
-            query.setParameter("avatar", avatar);
             query.setParameter("gender", gender);
             query.setParameter("password", password);
             query.setParameter("name", name);
@@ -416,5 +414,33 @@ public class UserDaoImpl implements UserDao {
         } finally {
             session.close();
         }
+    }
+
+    @Transactional
+    @Override
+    public boolean updateAvatar(String name, String avatarPath) {
+        logger.info("更新 " + name + " 用户的头像 " + avatarPath);
+        //取得session对象
+        session = sessionFactory.openSession();
+        Transaction transaction = null;
+        String hql = "UPDATE UserEntity U set U.avatar = :path "
+                + "WHERE U.name = :name";
+        try {
+            transaction = session.beginTransaction();
+            Query query = session.createQuery(hql);
+            query.setParameter("path", avatarPath);
+            query.setParameter("name", name);
+            query.executeUpdate();
+            transaction.commit();
+            logger.info("更新用户信息成功！");
+            return true;
+        } catch (HibernateException e) {
+            if (transaction != null) transaction.rollback();
+            logger.info("更新用户信息失败！");
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return false;
     }
 }

@@ -264,4 +264,15 @@ public class UserAction extends ActionSupport {
         }
         return "success";
     }
+
+    public String uploadImage(){
+        jsonData.clear();
+        jsonData.put("code", 200);
+        if (userService.uploadImage()) {
+            jsonData.put("msg", "success");
+        } else {
+            jsonData.put("msg", "fail");
+        }
+        return "success";
+    }
 }
