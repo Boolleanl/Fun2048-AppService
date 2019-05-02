@@ -275,4 +275,15 @@ public class UserAction extends ActionSupport {
         }
         return "success";
     }
+
+    public String getImage(){
+        if(userService.getImage()){
+            reSetJsonData();
+        }else {
+            jsonData.clear();
+            jsonData.put("code", 200);
+            jsonData.put("msg", "fail");
+        }
+        return "success";
+    }
 }

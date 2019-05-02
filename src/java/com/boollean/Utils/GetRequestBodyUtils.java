@@ -22,7 +22,6 @@ public class GetRequestBodyUtils {
         String jsonString = "";
         while ((s = reader.readLine()) != null) {
             jsonString += s;
-            System.out.println(jsonString);
         }
         return jsonString;
     }

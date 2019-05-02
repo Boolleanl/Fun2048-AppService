@@ -41,8 +41,8 @@ public class MessageDaoImpl implements MessageDao {
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
+            return list;
         }
-        return list;
     }
 
     @Override
@@ -61,8 +61,8 @@ public class MessageDaoImpl implements MessageDao {
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
+            return list;
         }
-        return list;
     }
 
     @Override
@@ -81,8 +81,8 @@ public class MessageDaoImpl implements MessageDao {
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
+            return list;
         }
-        return list;
     }
 
     @Override

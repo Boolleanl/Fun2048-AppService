@@ -112,4 +112,10 @@ public interface UserService {
      * @return 更新成功与否
      */
     boolean uploadImage();
+
+    /**
+     * 根据用户名获取头像
+     * @return 获取成功与否
+     */
+    boolean getImage();
 }

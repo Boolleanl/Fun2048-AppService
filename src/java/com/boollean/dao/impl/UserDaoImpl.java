@@ -443,4 +443,23 @@ public class UserDaoImpl implements UserDao {
         }
         return false;
     }
+
+    @Override
+    public String getAvatarByName(String name) {
+        logger.info("读取用户头像所在位置");
+        String result = null;
+        //取得session对象
+        session = sessionFactory.getCurrentSession();
+        String hql = "SELECT U.avatar FROM UserEntity U WHERE U.name = :name";
+        try {
+            Query query = session.createQuery(hql);
+            query.setParameter("name", name);
+            result = (String) query.list().get(0);
+            logger.info(name + "的头像位置是 " + result);
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            return result;
+        }
+    }
 }

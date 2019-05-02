@@ -133,4 +133,11 @@ public interface UserDao {
      * @return 更新是否成功
      */
     boolean updateAvatar(String name, String avatarPath);
+
+    /**
+     * 根据用户名获取头像
+     * @param name
+     * @return
+     */
+    String getAvatarByName(String name);
 }

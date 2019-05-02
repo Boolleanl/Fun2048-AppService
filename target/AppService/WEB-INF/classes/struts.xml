@@ -112,6 +112,12 @@
                 <param name="excludeNullProperties">false</param>
             </result>
         </action>
+        <action name="getImage" class="userAction" method="getImage">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+                <param name="excludeNullProperties">false</param>
+            </result>
+        </action>
     </package>
 
     <package name="message" extends="json-default" namespace="/">
