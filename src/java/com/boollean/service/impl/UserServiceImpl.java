@@ -29,6 +29,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * 用户相关相关服务接口的实现类
+ *
  * @author Boollean
  */
 @Service("userService")
@@ -174,6 +176,7 @@ public class UserServiceImpl implements UserService {
         //获得解析者
         JsonParser jsonParser = new JsonParser();
         //获得根节点元素
+        assert jsonString != null;
         JsonElement root = jsonParser.parse(jsonString);
         //根据文档判断根节点属于什么类型的Gson节点对象
         JsonObject element = root.getAsJsonObject();
@@ -191,7 +194,7 @@ public class UserServiceImpl implements UserService {
     @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
     public boolean updateUserByName() {
         HttpServletRequest request = ServletActionContext.getRequest();
-        String jsonString = null;
+        String jsonString;
         try {
             jsonString = GetRequestBodyUtils.getRequestJsonString(request);
         } catch (IOException e) {
@@ -225,7 +228,7 @@ public class UserServiceImpl implements UserService {
     @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
     public boolean updateUserDataByName() {
         HttpServletRequest request = ServletActionContext.getRequest();
-        String jsonString = null;
+        String jsonString;
         try {
             jsonString = GetRequestBodyUtils.getRequestJsonString(request);
         } catch (IOException e) {
@@ -323,37 +326,38 @@ public class UserServiceImpl implements UserService {
             ServletFileUpload servletFileUpload = new ServletFileUpload(diskFileItemFactory);
             List<FileItem> items = servletFileUpload.parseRequest(request);
 
-                // 获取上传字段
-                FileItem fileItem = items.get(0);
-                // 获取上传字段
-                String filename = fileItem.getName();
-                String name = null;
-                if (filename != null) {
-                    name = request.getParameter("name");
-                    filename = name + "." + FilenameUtils.getExtension(filename);
+            // 获取上传字段
+            FileItem fileItem = items.get(0);
+            // 获取上传字段
+            String filename = fileItem.getName();
+            String name = null;
+            if (filename != null) {
+                name = request.getParameter("name");
+                filename = name + "." + FilenameUtils.getExtension(filename);
+            }
+            // 生成存储路径
+            String storeDirectory = "D:" + File.separator + "Avatars";
+            File fileDirectory = new File(storeDirectory);
+            if (!fileDirectory.exists()) {
+                fileDirectory.mkdir();
+            }
+            // 处理文件的上传
+            try {
+                File file = new File(storeDirectory + File.separator + filename);
+                if (file.exists()) {
+                    file.delete();
                 }
-                // 生成存储路径
-                String storeDirectory = "D:" + File.separator + "Avatars";
-                File fileDirectory = new File(storeDirectory);
-                if (!fileDirectory.exists()) {
-                    fileDirectory.mkdir();
-                }
-                // 处理文件的上传
-                try {
-                    File file = new File(storeDirectory + File.separator + filename);
-                    if (file.exists()) {
-                        file.delete();
-                    }
-                    fileItem.write(new File(storeDirectory, filename));
+                assert filename != null;
+                fileItem.write(new File(storeDirectory, filename));
 
-                    String filePath = storeDirectory + File.separator + filename;
-                    System.out.println("filePath=" + filePath);
-                    message = filePath;
-                    return this.userDao.updateAvatar(name, filePath);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    message = "保存图片失败";
-                }
+                String filePath = storeDirectory + File.separator + filename;
+                System.out.println("filePath=" + filePath);
+                message = filePath;
+                return this.userDao.updateAvatar(name, filePath);
+            } catch (Exception e) {
+                e.printStackTrace();
+                message = "保存图片失败";
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -370,7 +374,7 @@ public class UserServiceImpl implements UserService {
         HttpServletRequest request = ServletActionContext.getRequest();
         HttpServletResponse response = ServletActionContext.getResponse();
         response.reset();
-        BufferedImage image = null;
+        BufferedImage image;
         ServletOutputStream out = null;
 
         String name = request.getParameter("name");
@@ -384,8 +388,9 @@ public class UserServiceImpl implements UserService {
         } catch (IOException e) {
             e.printStackTrace();
             result = false;
-        }finally {
+        } finally {
             try {
+                assert out != null;
                 out.close();
                 response.getOutputStream().close();
             } catch (IOException e) {

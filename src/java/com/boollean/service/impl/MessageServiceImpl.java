@@ -2,11 +2,9 @@ package com.boollean.service.impl;
 
 import com.boollean.Utils.GetRequestBodyUtils;
 import com.boollean.dao.MessageDao;
-import com.boollean.dao.impl.MessageDaoImpl;
 import com.boollean.entity.MessageEntity;
 import com.boollean.service.MessageService;
 import com.google.gson.*;
-import okhttp3.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
@@ -14,12 +12,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import javax.imageio.ImageIO;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.awt.image.BufferedImage;
-import java.io.*;
+import java.io.IOException;
 import java.lang.reflect.Type;
 import java.sql.Timestamp;
 import java.text.ParseException;
@@ -47,7 +41,7 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @Override
-    public List<MessageEntity> getAllMessages(){
+    public List<MessageEntity> getAllMessages() {
         return this.messageDao.getAllMessages();
     }
 
@@ -65,7 +59,7 @@ public class MessageServiceImpl implements MessageService {
     @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
     public boolean addMessage() {
         HttpServletRequest request = ServletActionContext.getRequest();
-        String jsonString = null;
+        String jsonString;
         try {
             jsonString = GetRequestBodyUtils.getRequestJsonString(request);
         } catch (IOException e) {

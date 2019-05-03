@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * 用户相关动作类
+ *
  * @author Boollean
  */
 @Controller("userAction")
@@ -46,7 +48,7 @@ public class UserAction extends ActionSupport {
     /**
      * 重置JsonData里的数据
      */
-    public void reSetJsonData() {
+    private void reSetJsonData() {
         jsonData.clear();
         jsonData.put("code", 200);
         jsonData.put("msg", "success");
@@ -54,6 +56,7 @@ public class UserAction extends ActionSupport {
 
     /**
      * 获取所有用户信息
+     *
      * @return 固定的字符串“success”，sturts会将JsonData里的数据自动转换成Json数据
      */
     public String getAllUsers() {
@@ -65,6 +68,7 @@ public class UserAction extends ActionSupport {
 
     /**
      * 根据用户名获取用户信息
+     *
      * @return 固定的字符串“success”，sturts会将JsonData里的数据自动转换成Json数据
      */
     public String getUserByName() {
@@ -80,6 +84,7 @@ public class UserAction extends ActionSupport {
 
     /**
      * 获取指定用户名用户的4*4模式最高分
+     *
      * @return 固定的字符串“success”，sturts会将JsonData里的数据自动转换成Json数据
      */
     public String getBestScore4ByName() {
@@ -91,6 +96,7 @@ public class UserAction extends ActionSupport {
 
     /**
      * 获取指定用户名用户的5*5模式最高分
+     *
      * @return 固定的字符串“success”，sturts会将JsonData里的数据自动转换成Json数据
      */
     public String getBestScore5ByName() {
@@ -102,6 +108,7 @@ public class UserAction extends ActionSupport {
 
     /**
      * 获取指定用户名用户的6*6模式最高分
+     *
      * @return 固定的字符串“success”，sturts会将JsonData里的数据自动转换成Json数据
      */
     public String getBestScore6ByName() {
@@ -113,6 +120,7 @@ public class UserAction extends ActionSupport {
 
     /**
      * 获取4*4模式最高分的前100个用户
+     *
      * @return 固定的字符串“success”，sturts会将JsonData里的数据自动转换成Json数据
      */
     public String listBest100Users4() {
@@ -124,6 +132,7 @@ public class UserAction extends ActionSupport {
 
     /**
      * 获取5*5模式最高分的前100个用户
+     *
      * @return 固定的字符串“success”，sturts会将JsonData里的数据自动转换成Json数据
      */
     public String listBest100Users5() {
@@ -135,6 +144,7 @@ public class UserAction extends ActionSupport {
 
     /**
      * 获取6*6模式最高分的前100用户
+     *
      * @return 固定的字符串“success”，sturts会将JsonData里的数据自动转换成Json数据
      */
     public String listBest100Users6() {
@@ -146,6 +156,7 @@ public class UserAction extends ActionSupport {
 
     /**
      * 判断用户名是否可用
+     *
      * @return 固定的字符串“success”，sturts会将JsonData里的数据自动转换成Json数据
      */
     public String isUserNameAvailable() {
@@ -162,6 +173,7 @@ public class UserAction extends ActionSupport {
 
     /**
      * 新增一个用户
+     *
      * @return 固定的字符串“success”，sturts会将JsonData里的数据自动转换成Json数据
      */
     public String addUser() {
@@ -177,6 +189,7 @@ public class UserAction extends ActionSupport {
 
     /**
      * 凭用户名更新用户的信息，包括用户名
+     *
      * @return 固定的字符串“success”，sturts会将JsonData里的数据自动转换成Json数据
      */
     public String updateUserByName() {
@@ -192,6 +205,7 @@ public class UserAction extends ActionSupport {
 
     /**
      * 凭用户名更新用户的信息，不包括用户名
+     *
      * @return 固定的字符串“success”，sturts会将JsonData里的数据自动转换成Json数据
      */
     public String updateUserDataByName() {
@@ -207,6 +221,7 @@ public class UserAction extends ActionSupport {
 
     /**
      * 凭用户名更新用户的4*4模式最高分
+     *
      * @return 固定的字符串“success”，sturts会将JsonData里的数据自动转换成Json数据
      */
     public String updateBestScore4ByName() {
@@ -222,6 +237,7 @@ public class UserAction extends ActionSupport {
 
     /**
      * 凭用户名更新用户的5*5模式最高分
+     *
      * @return 固定的字符串“success”，sturts会将JsonData里的数据自动转换成Json数据
      */
     public String updateBestScore5ByName() {
@@ -237,6 +253,7 @@ public class UserAction extends ActionSupport {
 
     /**
      * 凭用户名更新用户的6*6模式最高分
+     *
      * @return 固定的字符串“success”，sturts会将JsonData里的数据自动转换成Json数据
      */
     public String updateBestScore6ByName() {
@@ -252,6 +269,7 @@ public class UserAction extends ActionSupport {
 
     /**
      * 删除一个用户
+     *
      * @return 固定的字符串“success”，sturts会将JsonData里的数据自动转换成Json数据
      */
     public String deleteUser() {
@@ -265,7 +283,7 @@ public class UserAction extends ActionSupport {
         return "success";
     }
 
-    public String uploadImage(){
+    public String uploadImage() {
         jsonData.clear();
         jsonData.put("code", 200);
         if (userService.uploadImage()) {
@@ -276,10 +294,10 @@ public class UserAction extends ActionSupport {
         return "success";
     }
 
-    public String getImage(){
-        if(userService.getImage()){
+    public String getImage() {
+        if (userService.getImage()) {
             reSetJsonData();
-        }else {
+        } else {
             jsonData.clear();
             jsonData.put("code", 200);
             jsonData.put("msg", "fail");

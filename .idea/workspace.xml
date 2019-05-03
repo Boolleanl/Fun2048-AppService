@@ -7,18 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c5b6a87-8a83-46d8-8e05-d418a417af21" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/AppService_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/AppService_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/java/com/boollean/Utils/GetRequestBodyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/com/boollean/Utils/GetRequestBodyUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/com/boollean/Utils/RankUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/com/boollean/Utils/RankUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/com/boollean/action/MessageAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/com/boollean/action/MessageAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/java/com/boollean/action/UserAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/com/boollean/action/UserAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/com/boollean/dao/MessageDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/com/boollean/dao/MessageDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/java/com/boollean/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/com/boollean/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/java/com/boollean/dao/impl/MessageDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/com/boollean/dao/impl/MessageDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/java/com/boollean/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/com/boollean/dao/impl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/com/boollean/entity/MessageEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/com/boollean/entity/MessageEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/com/boollean/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/com/boollean/entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/com/boollean/service/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/com/boollean/service/MessageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/java/com/boollean/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/com/boollean/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/java/com/boollean/service/impl/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/com/boollean/service/impl/MessageServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/java/com/boollean/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/com/boollean/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/struts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AppService.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/AppService.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AppService/WEB-INF/classes/com/boollean/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/AppService/WEB-INF/classes/com/boollean/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/boollean/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/boollean/service/impl/UserServiceImpl.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -62,32 +69,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/com/boollean/action/UserAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="279" column="35" lean-forward="true" selection-start-line="279" selection-start-column="35" selection-end-line="279" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/java/com/boollean/service/impl/UserServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="592">
-              <caret line="391" column="36" lean-forward="true" selection-start-line="391" selection-start-column="36" selection-end-line="391" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -116,21 +98,21 @@
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j2.xml" />
         <option value="$PROJECT_DIR$/src/java/com/boollean/entity/MessageEntity.java" />
-        <option value="$PROJECT_DIR$/src/java/com/boollean/Utils/RankUser.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/src/java/com/boollean/Utils/GetRequestBodyUtils.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/java/com/boollean/dao/MessageDao.java" />
-        <option value="$PROJECT_DIR$/src/java/com/boollean/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/java/com/boollean/dao/impl/MessageDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/java/com/boollean/dao/impl/UserDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/struts.xml" />
-        <option value="$PROJECT_DIR$/src/java/com/boollean/action/MessageAction.java" />
-        <option value="$PROJECT_DIR$/src/java/com/boollean/action/UserAction.java" />
-        <option value="$PROJECT_DIR$/src/java/com/boollean/service/MessageService.java" />
+        <option value="$PROJECT_DIR$/src/java/com/boollean/Utils/RankUser.java" />
+        <option value="$PROJECT_DIR$/src/java/com/boollean/Utils/GetRequestBodyUtils.java" />
         <option value="$PROJECT_DIR$/src/java/com/boollean/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/java/com/boollean/service/impl/MessageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/java/com/boollean/service/MessageService.java" />
         <option value="$PROJECT_DIR$/src/java/com/boollean/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/java/com/boollean/service/impl/MessageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/java/com/boollean/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/java/com/boollean/dao/MessageDao.java" />
+        <option value="$PROJECT_DIR$/src/java/com/boollean/dao/impl/UserDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/java/com/boollean/dao/impl/MessageDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/java/com/boollean/action/UserAction.java" />
+        <option value="$PROJECT_DIR$/src/java/com/boollean/action/MessageAction.java" />
       </list>
     </option>
   </component>
@@ -170,6 +152,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="AppService" type="58d84e3e:PackageViewProjectNode" />
+              <item name="AppService" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="AppService" type="58d84e3e:PackageViewProjectNode" />
+              <item name="AppService" type="616d4139:PackageViewModuleNode" />
+              <item name="com.boollean" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -195,82 +194,10 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="boollean" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppService" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="boollean" type="462c0819:PsiDirectoryNode" />
-              <item name="action" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppService" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="boollean" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppService" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="boollean" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppService" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="boollean" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppService" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="boollean" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppService" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppService" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppService" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="AppService" type="58d84e3e:PackageViewProjectNode" />
-              <item name="AppService" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="AppService" type="58d84e3e:PackageViewProjectNode" />
-              <item name="AppService" type="616d4139:PackageViewModuleNode" />
-              <item name="com.boollean" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -291,13 +218,13 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="ImportMappingsDialog.RecentPackages">
-      <recent name="com.boollean.entity" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.boollean.action" />
       <recent name="com.boollean.service" />
       <recent name="com.boollean.dao" />
+    </key>
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="com.boollean.entity" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\IdeaProjects\AppService\src\java" />
@@ -497,6 +424,7 @@
       <workItem from="1556267494042" duration="2750000" />
       <workItem from="1556689081245" duration="13085000" />
       <workItem from="1556771000987" duration="13852000" />
+      <workItem from="1556872021809" duration="2313000" />
     </task>
     <servers />
   </component>
@@ -524,7 +452,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123922000" />
+    <option name="totallyTimeSpent" value="126235000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -538,7 +466,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4983871" visible="true" weight="0.23146747" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4983871" visible="true" weight="0.23524962" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -547,6 +475,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info id="Persistence" order="8" sideWeight="0.5016129" side_tool="true" weight="0.24432677" />
+      <window_info anchor="bottom" id="Duplicates" weight="0.32903227" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32903227" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.5645161" />
@@ -579,20 +508,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/builders/JUnit4Builder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.4.2.Final/hibernate-core-5.4.2.Final.jar!/org/hibernate/engine/transaction/internal/TransactionImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar!/javax/persistence/Query.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -720,13 +635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/boollean/entity/UserEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1870">
-          <caret line="113" column="5" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/io/File.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -761,23 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/boollean/Utils/GetRequestBodyUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/boollean/Utils/RankUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="17" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="438">
@@ -792,10 +683,133 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
+      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="114" column="69" lean-forward="true" selection-start-line="114" selection-start-column="69" selection-end-line="114" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/struts/struts2-json-plugin/2.5.20/struts2-json-plugin-2.5.20.jar!/org/apache/struts2/json/JSONUtil.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="186" selection-start-line="186" selection-end-line="186" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://9c0db11b-f480-46c4-be1c-a41624b19c72/schema/appservice/table/message">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/struts/struts2-core/2.5.20/struts2-core-2.5.20.jar!/com/opensymphony/xwork2/DefaultActionInvocation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="202" selection-start-line="202" selection-end-line="202" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/boollean/Utils/RankUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/boollean/Utils/GetRequestBodyUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/boollean/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/boollean/service/MessageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/boollean/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="347" column="38" lean-forward="true" selection-start-line="347" selection-start-column="38" selection-end-line="347" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://9c0db11b-f480-46c4-be1c-a41624b19c72/schema/appservice/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/boollean/service/impl/MessageServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/lang/StringLatin1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="192" column="22" selection-start-line="192" selection-start-column="22" selection-end-line="192" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="155" column="17" selection-start-line="155" selection-start-column="17" selection-end-line="155" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/boollean/entity/UserEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1716">
+          <caret line="106" column="64" selection-start-line="106" selection-start-column="64" selection-end-line="106" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/boollean/dao/MessageDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/boollean/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/com/boollean/dao/impl/UserDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="446" column="13" lean-forward="true" selection-start-line="446" selection-start-column="13" selection-end-line="446" selection-end-column="13" />
+        <state relative-caret-position="300">
+          <caret line="287" column="49" lean-forward="true" selection-start-line="287" selection-start-column="49" selection-end-line="287" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#0#15#1" expanded="true" />
@@ -819,123 +833,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/boollean/dao/impl/MessageDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#0#39#1" expanded="true" />
-            <element signature="e#0#39#1" expanded="true" />
-            <element signature="e#0#39#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/boollean/dao/MessageDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="34" column="52" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/com/boollean/action/MessageAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="105" column="5" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
+        <state relative-caret-position="328">
+          <caret line="108" column="19" selection-start-line="108" selection-start-column="19" selection-end-line="108" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/boollean/service/UserService.java">
+    <entry file="file://$PROJECT_DIR$/src/java/com/boollean/dao/impl/MessageDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="117" column="21" selection-start-line="117" selection-start-column="21" selection-end-line="117" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/boollean/service/MessageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/boollean/service/impl/MessageServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+        <state relative-caret-position="87">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#0#39#1" expanded="true" />
+            <element signature="e#0#39#1" expanded="true" />
+            <element signature="e#0#39#1" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/boollean/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="141" column="11" selection-start-line="141" selection-start-column="11" selection-end-line="141" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="114" column="69" lean-forward="true" selection-start-line="114" selection-start-column="69" selection-end-line="114" selection-end-column="69" />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider" />
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/struts/struts2-json-plugin/2.5.20/struts2-json-plugin-2.5.20.jar!/org/apache/struts2/json/JSONUtil.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="186" selection-start-line="186" selection-end-line="186" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9c0db11b-f480-46c4-be1c-a41624b19c72/schema/appservice/table/message">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9c0db11b-f480-46c4-be1c-a41624b19c72/schema/appservice/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/com/boollean/action/UserAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="279" column="35" lean-forward="true" selection-start-line="279" selection-start-column="35" selection-end-line="279" selection-end-column="35" />
+        <state relative-caret-position="190">
+          <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/struts/struts2-core/2.5.20/struts2-core-2.5.20.jar!/com/opensymphony/xwork2/DefaultActionInvocation.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="202" selection-start-line="202" selection-end-line="202" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/boollean/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="391" column="36" lean-forward="true" selection-start-line="391" selection-start-column="36" selection-end-line="391" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#998#999#0" expanded="true" />
+            <element signature="e#1029#1030#0" expanded="true" />
           </folding>
         </state>
       </provider>

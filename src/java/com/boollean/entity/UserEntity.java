@@ -96,9 +96,8 @@ public class UserEntity {
         if (avatar != null ? !avatar.equals(that.avatar) : that.avatar != null) return false;
         if (bestscore4 != null ? !bestscore4.equals(that.bestscore4) : that.bestscore4 != null) return false;
         if (bestscore5 != null ? !bestscore5.equals(that.bestscore5) : that.bestscore5 != null) return false;
-        if (bestscore6 != null ? !bestscore6.equals(that.bestscore6) : that.bestscore6 != null) return false;
+        return bestscore6 != null ? bestscore6.equals(that.bestscore6) : that.bestscore6 == null;
 
-        return true;
     }
 
     @Override

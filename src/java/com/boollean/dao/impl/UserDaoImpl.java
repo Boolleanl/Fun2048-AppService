@@ -13,10 +13,11 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.Iterator;
 import java.util.List;
 
 /**
+ * 用户表相关处理实现类
+ *
  * @author Boollean
  */
 @Repository(value = "userDao")
@@ -39,7 +40,7 @@ public class UserDaoImpl implements UserDao {
         try {
             Query query = session.createQuery(hql);
             list = query.list();
-            logger.info("获取了 "+list.size()+" 条用户信息");
+            logger.info("获取了 " + list.size() + " 条用户信息");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -63,7 +64,7 @@ public class UserDaoImpl implements UserDao {
                 return result;
             }
             result = (int) query.list().get(0);
-            logger.info(name + "的4*4模式最高分为 "+result+" 分");
+            logger.info(name + "的4*4模式最高分为 " + result + " 分");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -87,7 +88,7 @@ public class UserDaoImpl implements UserDao {
                 return result;
             }
             result = (int) query.list().get(0);
-            logger.info(name + "的5*5模式最高分为 "+result+" 分");
+            logger.info(name + "的5*5模式最高分为 " + result + " 分");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -111,7 +112,7 @@ public class UserDaoImpl implements UserDao {
                 return result;
             }
             result = (int) query.list().get(0);
-            logger.info(name + "的6*6模式最高分为 "+result+" 分");
+            logger.info(name + "的6*6模式最高分为 " + result + " 分");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -131,7 +132,7 @@ public class UserDaoImpl implements UserDao {
             Query query = session.createQuery(hql);
             query.setMaxResults(100);
             list = query.list();
-            logger.info("共有 "+list.size()+" 条用户信息");
+            logger.info("共有 " + list.size() + " 条用户信息");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -151,7 +152,7 @@ public class UserDaoImpl implements UserDao {
             Query query = session.createQuery(hql);
             query.setMaxResults(100);
             list = query.list();
-            logger.info("共有 "+list.size()+" 条用户信息");
+            logger.info("共有 " + list.size() + " 条用户信息");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -171,7 +172,7 @@ public class UserDaoImpl implements UserDao {
             Query query = session.createQuery(hql);
             query.setMaxResults(100);
             list = query.list();
-            logger.info("共有 "+list.size()+" 条用户信息");
+            logger.info("共有 " + list.size() + " 条用户信息");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -386,7 +387,7 @@ public class UserDaoImpl implements UserDao {
 
     @Transactional
     @Override
-    public boolean deleteUser(String name,String password) {
+    public boolean deleteUser(String name, String password) {
         logger.info("删除 " + name + " 的信息");
         String hql = "DELETE FROM UserEntity U WHERE U.name = :name AND U.password = :password";
         Transaction transaction = null;
@@ -399,10 +400,10 @@ public class UserDaoImpl implements UserDao {
             query.setParameter("password", password);
             int result = query.executeUpdate();
             transaction.commit();
-            if(result>0){
+            if (result > 0) {
                 logger.info("删除用户成功！");
                 return true;
-            }else {
+            } else {
                 logger.info("没有此用户！");
                 return false;
             }

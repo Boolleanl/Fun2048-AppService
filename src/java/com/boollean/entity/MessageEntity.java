@@ -65,9 +65,8 @@ public class MessageEntity {
         if (msgid != that.msgid) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         if (date != null ? !date.equals(that.date) : that.date != null) return false;
-        if (message != null ? !message.equals(that.message) : that.message != null) return false;
+        return message != null ? message.equals(that.message) : that.message == null;
 
-        return true;
     }
 
     @Override

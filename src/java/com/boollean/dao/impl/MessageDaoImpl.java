@@ -16,6 +16,8 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
+ * 留言板相关处理实现类
+ *
  * @author Boollean
  */
 @Repository("messageDao")
@@ -37,7 +39,7 @@ public class MessageDaoImpl implements MessageDao {
         try {
             Query query = session.createQuery(hql);
             list = query.list();
-            logger.info("获取了 "+list.size()+" 条留言信息");
+            logger.info("获取了 " + list.size() + " 条留言信息");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -57,7 +59,7 @@ public class MessageDaoImpl implements MessageDao {
             //获取最多100条记录
             query.setMaxResults(100);
             list = query.list();
-            logger.info("获取了 "+list.size()+" 条留言信息");
+            logger.info("获取了 " + list.size() + " 条留言信息");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -77,7 +79,7 @@ public class MessageDaoImpl implements MessageDao {
             //获取最多200条记录
             query.setMaxResults(200);
             list = query.list();
-            logger.info("获取了 "+list.size()+" 条留言信息");
+            logger.info("获取了 " + list.size() + " 条留言信息");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {

@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * 留言板相关动作类
+ *
  * @author Boollean
  */
 @Controller("messageAction")
@@ -43,7 +45,7 @@ public class MessageAction extends ActionSupport {
     /**
      * 重置JsonData里的数据，默认请求成功
      */
-    public void reSetJsonData() {
+    private void reSetJsonData() {
         jsonData.clear();
         jsonData.put("code", 200);
         jsonData.put("msg", "success");
@@ -51,6 +53,7 @@ public class MessageAction extends ActionSupport {
 
     /**
      * 获取所有留言信息
+     *
      * @return 固定的字符串“success”，sturts会将JsonData里的数据自动转换成Json数据
      */
     public String getAllMessages() {
@@ -62,6 +65,7 @@ public class MessageAction extends ActionSupport {
 
     /**
      * 获取最近的100条留言信息
+     *
      * @return 固定的字符串“success”，sturts会将JsonData里的数据自动转换成Json数据
      */
     public String getLatest100Messages() {
@@ -73,6 +77,7 @@ public class MessageAction extends ActionSupport {
 
     /**
      * 获取最近的200条留言信息
+     *
      * @return 固定的字符串“success”，sturts会将JsonData里的数据自动转换成Json数据
      */
     public String getLatest200Messages() {
@@ -84,6 +89,7 @@ public class MessageAction extends ActionSupport {
 
     /**
      * 添加一条新的留言
+     *
      * @return 固定的字符串“success”，sturts会将JsonData里的数据自动转换成Json数据
      */
     public String addMessage() {
