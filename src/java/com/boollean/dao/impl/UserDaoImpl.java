@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.io.File;
 import java.util.List;
 
 /**
@@ -126,7 +127,7 @@ public class UserDaoImpl implements UserDao {
         logger.info("4*4模式最高分的前一百人");
         //取得session对象
         session = sessionFactory.getCurrentSession();
-        String hql = "FROM UserEntity U WHERE U.bestscore4 > 0 ORDER BY U.bestscore4 DESC ,U.name asc";
+        String hql = "FROM UserEntity U WHERE U.bestscore4 > 0 ORDER BY U.bestscore4 DESC ,U.name ASC";
         List<UserEntity> list = null;
         try {
             Query query = session.createQuery(hql);
@@ -146,7 +147,7 @@ public class UserDaoImpl implements UserDao {
         logger.info("5*5模式最高分的前一百人");
         //取得session对象
         session = sessionFactory.getCurrentSession();
-        String hql = "FROM UserEntity U WHERE U.bestscore5 > 0 ORDER BY U.bestscore5 DESC ,U.name asc";
+        String hql = "FROM UserEntity U WHERE U.bestscore5 > 0 ORDER BY U.bestscore5 DESC ,U.name ASC";
         List<UserEntity> list = null;
         try {
             Query query = session.createQuery(hql);
@@ -166,7 +167,7 @@ public class UserDaoImpl implements UserDao {
         logger.info("6*6模式最高分的前一百人");
         //取得session对象
         session = sessionFactory.getCurrentSession();
-        String hql = "FROM UserEntity U WHERE U.bestscore6 > 0 ORDER BY U.bestscore6 DESC ,U.name asc";
+        String hql = "FROM UserEntity U WHERE U.bestscore6 > 0 ORDER BY U.bestscore6 DESC ,U.name ASC";
         List<UserEntity> list = null;
         try {
             Query query = session.createQuery(hql);
@@ -186,9 +187,9 @@ public class UserDaoImpl implements UserDao {
         logger.info("判断 " + name + " 是否在数据库内");
         //取得session对象
         session = sessionFactory.getCurrentSession();
-        String queryString = "FROM UserEntity U WHERE U.name = ?1";
+        String hql = "FROM UserEntity U WHERE U.name = ?1";
         try {
-            Query query = session.createQuery(queryString).setParameter(1, name);
+            Query query = session.createQuery(hql).setParameter(1, name);
             if (query.list().isEmpty()) {
                 logger.info("名字可用");
                 return true;
@@ -251,10 +252,10 @@ public class UserDaoImpl implements UserDao {
         //取得session对象
         session = sessionFactory.openSession();
         Transaction transaction = null;
-        String hql2 = "UPDATE UserEntity U set U.name = :newName, U.gender = :gender, U.password = :password WHERE U.name = :oldName";
+        String hql = "UPDATE UserEntity U SET U.name = :newName, U.gender = :gender, U.password = :password WHERE U.name = :oldName";
         try {
             transaction = session.beginTransaction();
-            Query query = session.createQuery(hql2);
+            Query query = session.createQuery(hql);
             query.setParameter("newName", newName);
             query.setParameter("gender", gender);
             query.setParameter("password", password);
@@ -280,7 +281,7 @@ public class UserDaoImpl implements UserDao {
         //取得session对象
         session = sessionFactory.openSession();
         Transaction transaction = null;
-        String hql = "UPDATE UserEntity U set U.gender = :gender, U.password = :password "
+        String hql = "UPDATE UserEntity U SET U.gender = :gender, U.password = :password "
                 + "WHERE U.name = :name";
         try {
             transaction = session.beginTransaction();
@@ -308,7 +309,7 @@ public class UserDaoImpl implements UserDao {
         //取得session对象
         session = sessionFactory.openSession();
         Transaction transaction = null;
-        String hql = "UPDATE UserEntity U set U.bestscore4 = :score "
+        String hql = "UPDATE UserEntity U SET U.bestscore4 = :score "
                 + "WHERE U.name = :name";
         try {
             transaction = session.beginTransaction();
@@ -336,7 +337,7 @@ public class UserDaoImpl implements UserDao {
         //取得session对象
         session = sessionFactory.openSession();
         Transaction transaction = null;
-        String hql = "UPDATE UserEntity U set U.bestscore5 = :score "
+        String hql = "UPDATE UserEntity U SET U.bestscore5 = :score "
                 + "WHERE U.name = :name";
         try {
             transaction = session.beginTransaction();
@@ -364,7 +365,7 @@ public class UserDaoImpl implements UserDao {
         //取得session对象
         session = sessionFactory.openSession();
         Transaction transaction = null;
-        String hql = "UPDATE UserEntity U set U.bestscore6 = :score "
+        String hql = "UPDATE UserEntity U SET U.bestscore6 = :score "
                 + "WHERE U.name = :name";
         try {
             transaction = session.beginTransaction();
@@ -402,6 +403,12 @@ public class UserDaoImpl implements UserDao {
             transaction.commit();
             if (result > 0) {
                 logger.info("删除用户成功！");
+                String storeDirectory = "D:" + File.separator + "Avatars";
+                String filename = name + ".jpg";
+                File file = new File(storeDirectory + File.separator + filename);
+                if (file.exists()) {
+                    file.delete();
+                }
                 return true;
             } else {
                 logger.info("没有此用户！");
@@ -424,7 +431,7 @@ public class UserDaoImpl implements UserDao {
         //取得session对象
         session = sessionFactory.openSession();
         Transaction transaction = null;
-        String hql = "UPDATE UserEntity U set U.avatar = :path "
+        String hql = "UPDATE UserEntity U SET U.avatar = :path "
                 + "WHERE U.name = :name";
         try {
             transaction = session.beginTransaction();
