@@ -4,9 +4,9 @@
 
 <html>
 <head>
-    <title>ssh测试</title>
+    <title>Fun2048服务端</title>
 </head>
 <body>
-Hello world
+启动成功
 </body>
 </html>

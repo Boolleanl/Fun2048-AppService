@@ -24,14 +24,14 @@ import java.util.List;
 @Transactional
 public class MessageDaoImpl implements MessageDao {
     //获取日志记录器Logger，名字为本类类名
-    private static Logger logger = LogManager.getLogger(MessageDaoImpl.class);
+    private static Logger sLogger = LogManager.getLogger(MessageDaoImpl.class);
     @Resource(name = "sessionFactory")
     private SessionFactory sessionFactory;
     private Session session;
 
     @Override
     public List<MessageEntity> getAllMessages() {
-        logger.info("读取所有留言信息");
+        sLogger.info("读取所有留言信息");
         //取得session对象
         session = sessionFactory.getCurrentSession();
         String hql = "FROM MessageEntity M ORDER BY M.id DESC";
@@ -39,7 +39,7 @@ public class MessageDaoImpl implements MessageDao {
         try {
             Query query = session.createQuery(hql);
             list = query.list();
-            logger.info("获取了 " + list.size() + " 条留言信息");
+            sLogger.info("获取了 " + list.size() + " 条留言信息");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -49,7 +49,7 @@ public class MessageDaoImpl implements MessageDao {
 
     @Override
     public List<MessageEntity> getLatest100Messages() {
-        logger.info("读取100条留言信息");
+        sLogger.info("读取100条留言信息");
         //取得session对象
         session = sessionFactory.getCurrentSession();
         String hql = "FROM MessageEntity M ORDER BY M.id DESC";
@@ -59,7 +59,7 @@ public class MessageDaoImpl implements MessageDao {
             //获取最多100条记录
             query.setMaxResults(100);
             list = query.list();
-            logger.info("获取了 " + list.size() + " 条留言信息");
+            sLogger.info("获取了 " + list.size() + " 条留言信息");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -69,7 +69,7 @@ public class MessageDaoImpl implements MessageDao {
 
     @Override
     public List<MessageEntity> getLatest200Messages() {
-        logger.info("读取200条留言信息");
+        sLogger.info("读取200条留言信息");
         //取得session对象
         session = sessionFactory.getCurrentSession();
         String hql = "FROM MessageEntity M ORDER BY M.id DESC";
@@ -79,7 +79,7 @@ public class MessageDaoImpl implements MessageDao {
             //获取最多200条记录
             query.setMaxResults(200);
             list = query.list();
-            logger.info("获取了 " + list.size() + " 条留言信息");
+            sLogger.info("获取了 " + list.size() + " 条留言信息");
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
@@ -89,7 +89,7 @@ public class MessageDaoImpl implements MessageDao {
 
     @Override
     public boolean addMessage(MessageEntity messageEntity) {
-        logger.info("新增一条留言信息");
+        sLogger.info("准备新增一条留言信息");
         //取得session对象
         session = sessionFactory.openSession();
         Transaction transaction = null;
@@ -97,11 +97,11 @@ public class MessageDaoImpl implements MessageDao {
             transaction = session.beginTransaction();
             session.save(messageEntity);
             transaction.commit();
-            logger.info("新增信息成功！");
+            sLogger.info("成功新增一条留言信息！");
             return true;
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
-            logger.info("新增信息失败！");
+            sLogger.info("新增信息失败！");
             e.printStackTrace();
             return false;
         } finally {

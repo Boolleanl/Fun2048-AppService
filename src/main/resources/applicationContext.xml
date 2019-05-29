@@ -70,10 +70,10 @@
     </bean>
 
     <!--用注解来实现事务管理-->
-    <bean id="txManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+    <bean id="myTransactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
-    <tx:annotation-driven transaction-manager="txManager"/>
+    <tx:annotation-driven transaction-manager="myTransactionManager"/>
 
     <context:component-scan base-package="com.boollean.dao"/>
     <context:component-scan base-package="com.boollean.service"/>
